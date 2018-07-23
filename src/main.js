@@ -3,8 +3,17 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import iView from 'iview'
+import '../src/assets/css/base.css'
+import 'iview/dist/styles/iview.css'
 
+Vue.use(iView)
 Vue.config.productionTip = false
+
+router.beforeEach((to, from, next) => {
+  window.document.title = to.meta.title
+  next()
+})
 
 /* eslint-disable no-new */
 new Vue({
