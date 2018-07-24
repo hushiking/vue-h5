@@ -1,7 +1,7 @@
 <template>
   <div class="authority">
     <div class="authority_content">
-      <img src="../assets/ico-tanhao.png">
+      <img src="../assets/img/ico-tanhao.png">
       <p>该功能需要权限认证，请先登录然后再进行业务办理。</p>
       <Button type="primary">登录</Button>
     </div>

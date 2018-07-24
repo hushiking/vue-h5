@@ -95,7 +95,7 @@
       border-bottom: 1px solid #ccc;
     }
     &_col {
-      background: url(../assets/check.png) no-repeat top right;
+      background: url(../assets/img/check.png) no-repeat top right;
       background-size: 30px auto;
       &:nth-child(odd) {
         border-right: 1px solid #ccc;
@@ -120,7 +120,7 @@
       }
       @for $i from 1 through 8 {
         .icon-menu#{$i} {
-          background: url(../assets/menu#{$i}.png) no-repeat center center;
+          background: url(../assets/img/menu#{$i}.png) no-repeat center center;
           background-size: auto 50px;
         }
       }

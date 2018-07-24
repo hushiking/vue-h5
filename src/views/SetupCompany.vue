@@ -10,7 +10,7 @@
       </li>
     </ul>
     <div class="company_fix">
-      <router-link :to="{ name: 'others' }">非本账号申请</router-link>
+      <router-link :to="{ name: 'not_self' }">非本账号申请</router-link>
       <div>如果非本账号申请的名称需要通过系统校验后可继续办理业务</div>
     </div>
   </div>

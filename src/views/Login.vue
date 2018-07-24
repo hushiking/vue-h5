@@ -20,17 +20,19 @@
       </FormItem>
     </Form>
     <footer>
-      <img src="../assets/logo.png">主办单位：丰台工商
+      <img src="../assets/img/logo.png">主办单位：丰台工商
     </footer>
     <Modal v-model="modal3" :closable="false" class="login_modal" class-name="vertical-center-modal">
       <div class="login_modal-center">
-        <img src="../assets/ren.png" width="80">
+        <img src="../assets/img/ren.png" width="80">
       </div>
       尊敬的申请人：
       <br/>
       <p class="login_modal-tip">为了方便您办理业务，在公众号进行过身份认证的用户，可以直接通过身份证号进行扫脸登录，无需接收短信。通过扫脸登录的用户进行相关业务时，无需再次重复拍照。</p>
       <div class="login_modal-confirm">
-        <input name="checkbox" v-model="flag" type="checkbox">
+        <!-- <MyCheckBox :value="value" @input="flag = arguments[0]"></MyCheckBox> -->
+        <!-- 下行代码是上行代码的语法糖，给组件添加 v-model 属性时，默认会把 value 作为组件的属性，然后把 'input' 值作为给组件绑定事件时的事件名。接受子组件发射的事件，为父组件绑定对应方法 -->
+        <MyCheckBox v-model="flag" />
         <label>知道了，不再提示</label>
       </div>
       <div slot="footer">
@@ -41,6 +43,7 @@
 </template>
 
 <script>
+  import MyCheckBox from '../components/MyCheckBox.vue'
   export default {
     data() {
       return {
@@ -49,7 +52,7 @@
           password: ''
         },
         modal3: false,
-        flag: true
+        flag: false
       }
     },
     methods: {
@@ -63,6 +66,10 @@
         if (this.flag) {
           localStorage.setItem('tip', 'false')
         }
+      },
+      // 与子组件交互的方法
+      check(val) {
+        this.flag = val
       }
     },
     mounted() {
@@ -71,6 +78,9 @@
       } else {
         this.modal3 = true
       }
+    },
+    components: {
+      MyCheckBox
     }
   }
 
@@ -105,14 +115,14 @@
       margin-top: 20px;
       &-user {
         input.ivu-input {
-          background: url(../assets/login-ico1.png) no-repeat 15px center;
+          background: url(../assets/img/login-ico1.png) no-repeat 15px center;
           background-size: auto 20px;
           text-indent: 30px;
         }
       }
       &-pass {
         input.ivu-input {
-          background: url(../assets/login-ico2.png) no-repeat 15px center;
+          background: url(../assets/img/login-ico2.png) no-repeat 15px center;
           background-size: auto 20px;
           text-indent: 30px;
         }
@@ -162,24 +172,9 @@
         input {
           position: relative;
           right: 0;
-          top: 4px;
+          top: 5px;
           width: 28px;
           height: 26px;
-          border: none;
-          outline: none;
-          background: transparent;
-          -webkit-appearance: none;
-        }
-        input:before {
-          color: #aaa;
-          content: "\F401";
-          font-family: Ionicons;
-          font-size: 28px;
-          -webkit-font-smoothing: antialiased;
-        }
-        input:checked:before {
-          color: #00b3ff;
-          content: "\F3FF";
         }
         label {
           line-height: 1.1;

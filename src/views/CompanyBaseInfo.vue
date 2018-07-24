@@ -1,0 +1,146 @@
+<template>
+  <div class="baseinfo">
+    <Header />
+    <Form class="baseinfo_section1" label-position="left">
+      <FormItem label="营业期限" :label-width="150">
+        <Input type="text" placeholder="年"></Input>
+      </FormItem>
+      <FormItem label="北京市 丰台区" :label-width="150">
+        <Input type="text" placeholder="住所（经营场所）"></Input>
+      </FormItem>
+      <FormItem label="北京市 丰台区" :label-width="150">
+        <Input type="text" placeholder="生产经营地"></Input>
+      </FormItem>
+      <div class="baseinfo_space"></div>
+      <FormItem label="住所（产权人）" :label-width="150">
+        <Input type="text" placeholder=""></Input>
+      </FormItem>
+      <FormItem class="baseinfo_select">
+        <Select v-model="val">
+          <Option value="shenfenzheng">请选择住宿产权类型</Option>
+          <Option value="xueshengzheng">学生证</Option>
+          <Option value="junrenzheng">军人证</Option>
+        </Select>
+      </FormItem>
+      <FormItem class="baseinfo_select">
+        <Select v-model="val1">
+          <Option value="shenfenzheng">请选择住所提供方式</Option>
+          <Option value="xueshengzheng">学生证</Option>
+          <Option value="junrenzheng">军人证</Option>
+        </Select>
+      </FormItem>
+      <FormItem label="营业面积" :label-width="150">
+        <Input type="text" placeholder="平方米"></Input>
+      </FormItem>
+      <div class="baseinfo_space"></div>
+      <FormItem label="住房使用期限" :label-width="150">
+        <Input type="text" placeholder="年"></Input>
+      </FormItem>
+      <FormItem class="baseinfo_select">
+        <Select v-model="val2">
+          <Option value="shenfenzheng">请选择房屋用途</Option>
+          <Option value="xueshengzheng">学生证</Option>
+          <Option value="junrenzheng">军人证</Option>
+        </Select>
+      </FormItem>
+      <FormItem label="执照副本数" :label-width="150">
+        <Input type="text" placeholder="份"></Input>
+      </FormItem>
+    </Form>
+    <Row>
+      <Col span="12">
+      <Button type="warning" size="large" long>保存</Button>
+      </Col>
+      <Col span="12">
+      <Button type="primary" size="large" long>下一步</Button>
+      </Col>
+    </Row>
+  </div>
+</template>
+
+<script>
+  import Header from '../components/Header'
+  export default {
+    data() {
+      return {
+        val: 'shenfenzheng',
+        val1: 'shenfenzheng',
+        val2: 'shenfenzheng'
+      }
+    },
+    components: {
+      Header
+    }
+  }
+
+</script>
+
+<style lang="scss">
+  body {
+    background: #f3f3f3;
+  }
+
+  .baseinfo {
+    background: #fff;
+    &_space {
+      height: 15px;
+      background: #f3f3f3;
+    }
+    .ivu-form-item {
+      margin-bottom: 0;
+      border-bottom: 1px solid #dedede;
+      label {
+        height: 50px;
+        font-size: 16px;
+        line-height: 50px;
+        padding: 0 0 0 15px;
+      }
+      input {
+        height: 50px;
+        font-size: 16px;
+        border: none;
+        border-radius: 0;
+        &:hover {
+          border: none;
+        }
+        &:focus {
+          border: none;
+          box-shadow: none;
+        }
+        &::-webkit-input-placeholder {
+          text-align: right;
+        }
+        &::-moz-placeholder {
+          text-align: right;
+        }
+        &:-ms-input-placeholder {
+          text-align: right;
+        }
+      }
+    }
+    &_select {
+      .ivu-form-item-content {
+        height: 49px;
+        line-height: 49px;
+        padding-left: 15px;
+        .ivu-select-selection {
+          border: none;
+          box-shadow: none;
+          .ivu-select-selected-value {
+            font-size: 16px;
+            padding-left: 0;
+          }
+        }
+      }
+    }
+    >div {
+      &:last-child {
+        background: #f3f3f3;
+        .ivu-col {
+          padding: 20px;
+        }
+      }
+    }
+  }
+
+</style>
