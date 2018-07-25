@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/views/Login'
 import SetupCompany from '@/views/SetupCompany'
+import ContinueSetup from '@/views/ContinueSetup'
+import BusinessConfirm from '@/views/BusinessConfirm'
 import NotSelf from '@/views/NotSelf'
 import Register from '@/views/Register'
 import Authority from '@/views/Authority'
@@ -17,6 +19,7 @@ import Approved from '@/views/Approved'
 import CompanyBaseinfo from '@/views/CompanyBaseinfo'
 import Lookup from '@/views/Lookup'
 import NonNatural from '@/views/NonNatural'
+import Natural from '@/views/Natural'
 
 Vue.use(Router)
 
@@ -37,6 +40,22 @@ export default new Router({
       },
       name: 'setup_company',
       component: SetupCompany
+    },
+    {
+      path: '/continue_setup',
+      meta: {
+        title: '我的业务'
+      },
+      name: 'continue_setup',
+      component: ContinueSetup
+    },
+    {
+      path: '/business_confirm',
+      meta: {
+        title: '业务确认'
+      },
+      name: 'business_confirm',
+      component: BusinessConfirm
     },
     {
       path: '/not_self',
@@ -121,10 +140,18 @@ export default new Router({
     {
       path: '/non_natural',
       meta: {
-        name: '企业经营范围'
+        name: '股东信息填报'
       },
       name: 'non_natural',
       component: NonNatural
+    },
+    {
+      path: '/natural',
+      meta: {
+        name: '股东信息填报'
+      },
+      name: 'natural',
+      component: Natural
     },
     {
       path: '*',

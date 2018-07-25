@@ -1,19 +1,18 @@
 <template>
-  <div class="company">
+  <div class="continue">
     <ul>
       <li v-for="(item, index) in items" :key="index">
-        <router-link to="" class="company_apply">进入
+        <router-link to="" class="continue_apply">继续
           <br/>办理</router-link>
-        <div class="company_item">
-          <div class="company_item-title">{{item.title}}</div>
-          <div class="company_item-info">{{item.info}}</div>
+        <div class="continue_item">
+          <div class="continue_item-title">{{item.title}}</div>
+          <div class="continue_item-info">
+            <span>申请时间：<em>{{item.time}}</em></span>
+            <span>业务类型：<em>{{item.type}}</em></span>
+          </div>
         </div>
       </li>
     </ul>
-    <div class="company_fix">
-      <router-link :to="{ name: 'not_self' }">非本账号申请</router-link>
-      <div>如果非本账号申请的名称需要通过系统校验后可继续办理业务</div>
-    </div>
   </div>
 </template>
 
@@ -24,15 +23,18 @@
         items: [
           {
             title: '北京顾信丰科贸易有限公司',
-            info: '(京丰）名称预查（内）字[2018] 第0422335号'
+            time: '2017年7月8日',
+            type: '普通设立'
           },
           {
             title: '北京顾信丰科贸易有限公司',
-            info: '(京丰）名称预查（内）字[2018] 第0422335号'
+            time: '2017年7月8日',
+            type: '普通设立'
           },
           {
             title: '北京顾信丰科贸易有限公司',
-            info: '(京丰）名称预查（内）字[2018] 第0422335号'
+            time: '2017年7月8日',
+            type: '普通设立'
           }
         ]
       }
@@ -43,7 +45,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-  .company {
+  .continue {
     height: 100%;
     background: #f3f3f3;
     li {
@@ -76,27 +78,6 @@
         color: #7d7d7d;
         overflow: hidden;
         white-space: nowrap;
-      }
-    }
-    &_fix {
-      position: fixed;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      background: #fff;
-      padding: 0.54rem;
-      font-size: 0.5rem;
-      line-height: 0.72rem;
-      overflow: hidden;
-      a {
-        float: right;
-        margin-left: 0.36rem;
-        padding: 0.22rem 0.43rem;
-        cursor: pointer;
-        font-size: 0.5rem;
-        border-radius: 3px;
-        background: #fc7742;
-        color: #fff;
       }
     }
   }
