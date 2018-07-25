@@ -83,21 +83,21 @@
   .baseinfo {
     background: #fff;
     &_space {
-      height: 15px;
+      height: 0.54rem;
       background: #f3f3f3;
     }
     .ivu-form-item {
       margin-bottom: 0;
       border-bottom: 1px solid #dedede;
       label {
-        height: 50px;
-        font-size: 16px;
-        line-height: 50px;
-        padding: 0 0 0 15px;
+        height: 1.75rem;
+        font-size: 0.57rem;
+        line-height: 1.75rem;
+        padding: 0 0 0 0.54rem;
       }
       input {
-        height: 50px;
-        font-size: 16px;
+        height: 1.75rem;
+        font-size: 0.57rem;
         border: none;
         border-radius: 0;
         &:hover {
@@ -120,14 +120,14 @@
     }
     &_select {
       .ivu-form-item-content {
-        height: 49px;
-        line-height: 49px;
-        padding-left: 15px;
+        height: 1.75rem;
+        line-height: 1.75rem;
+        padding-left: 0.54rem;
         .ivu-select-selection {
           border: none;
           box-shadow: none;
           .ivu-select-selected-value {
-            font-size: 16px;
+            font-size: 0.57rem;
             padding-left: 0;
           }
         }
@@ -137,9 +137,12 @@
       &:last-child {
         background: #f3f3f3;
         .ivu-col {
-          padding: 20px;
+          padding: 0.72rem;
         }
       }
+    }
+    button {
+      font-size: 0.57rem;
     }
   }
 

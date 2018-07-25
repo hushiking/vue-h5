@@ -27,7 +27,7 @@
     methods: {
       handleSubmit(name) {
         this.$router.push({
-          name: 'company'
+          name: 'company_baseinfo'
         })
       }
     }
@@ -45,8 +45,8 @@
       margin: 0;
     }
     input {
-      height: 50px;
-      font-size: 16px;
+      height: 1.75rem;
+      font-size: 0.57rem;
       border: none;
       border-bottom: 1px solid #dedede;
       border-radius: 0;
@@ -61,9 +61,9 @@
       }
     }
     &_apply {
-      margin: 15px;
+      margin: 0.54rem;
       button {
-        font-size: 16px;
+        font-size: 0.57rem;
       }
     }
   }

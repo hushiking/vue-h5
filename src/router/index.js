@@ -6,13 +6,15 @@ import NotSelf from '@/views/NotSelf'
 import Register from '@/views/Register'
 import Authority from '@/views/Authority'
 import MyBusiness from '@/views/MyBusiness'
+// import MySearch from '@/components/MySearch'
 // import MyCheckBox from '@/components/MyCheckBox'
-import Header from '@/components/Header'
+import MyInput from '@/components/MyInput'
 import Record from '@/views/Record'
 import RecordCompleted from '@/views/RecordCompleted'
 import Contact from '@/views/Contact'
 import Approved from '@/views/Approved'
-import CompanyBaseInfo from '@/views/CompanyBaseInfo'
+import CompanyBaseinfo from '@/views/CompanyBaseinfo'
+import Lookup from '@/views/Lookup'
 
 Vue.use(Router)
 
@@ -104,7 +106,15 @@ export default new Router({
         name: '企业基本信息'
       },
       name: 'company_baseinfo',
-      component: CompanyBaseInfo
+      component: CompanyBaseinfo
+    },
+    {
+      path: '/lookup',
+      meta: {
+        name: '企业经营范围'
+      },
+      name: 'lookup',
+      component: Lookup
     },
     {
       path: '*',
@@ -112,7 +122,7 @@ export default new Router({
         name: '其他'
       },
       name: 'any',
-      component: Header
+      component: MyInput
     }
   ]
 })

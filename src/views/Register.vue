@@ -59,8 +59,8 @@ body {
 }
 .register {
   input {
-    height: 50px;
-    font-size: 16px;
+    height: 1.75rem;
+    font-size: 0.57rem;
     border: none;
     border-bottom: 1px solid #dedede;
     border-radius: 0;
@@ -75,28 +75,28 @@ body {
     }
   }
   &_block {
-    margin-top: 15px;
+    margin-top: 0.54rem;
     border-top: 1px solid #dedede;
   }
   &_pos {
     position: relative;
-    margin-top: 15px;
+    margin-top: 0.54rem;
     border-top: 1px solid #dedede;
     button {
       position: absolute;
-      right: 10px;
-      top: 8px;
+      right: 0.36rem;
+      top: 0.28rem;
     }
   }
   &_bottom {
-    margin: 15px;
-    font-size: 14px;
+    margin: 0.54rem;
+    font-size: 0.5rem;
     p {
-      text-indent: 28px;
+      text-indent: 1rem;
     }
     button {
-      margin-top: 15px;
-      font-size: 16px;
+      margin-top: 0.54rem;
+      font-size: 0.57rem;
     }
   }
 }

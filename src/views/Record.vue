@@ -41,22 +41,22 @@
 <style lang="scss">
   .record {
     &_tip {
-      padding: 0 15px;
+      padding: 0 0.54rem;
       >p {
-        font-size: 14px;
+        font-size: 0.5rem;
         margin: 10px 0;
         &:first-child {
-          font-size: 16px;
-          margin: 15px 0;
+          font-size: 0.57rem;
+          margin: 0.54rem 0;
         }
         &:nth-child(2) {
           text-indent: 28px;
-          margin: 15px 0;
+          margin: 0.54rem 0;
         }
       }
     }
     &_qr {
-      font-size: 16px;
+      // font-size: 0.57rem;
       text-align: center;
       img {
         height: 100px;
@@ -64,12 +64,15 @@
         border: 1px solid #eee;
       }
       label {
-        font-size: 14px;
+        font-size: 0.5rem;
       }
     }
     &_next {
-      padding: 20px 0;
+      padding: 0.72rem 0;
       text-align: center;
+      button {
+        font-size: 0.57rem;
+      }
     }
   }
 

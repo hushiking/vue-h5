@@ -71,25 +71,20 @@
 </script>
 
 <style lang="scss">
-  body {
-    background: #f3f3f3;
-    width: 100%;
-  }
-
   .contact {
+    background: #f3f3f3;
     >div {
       background: #fff;
       &:last-child {
         background: #f3f3f3;
         .ivu-col {
-          padding: 20px;
+          padding: 0.72rem;
         }
       }
       .ivu-row {
-        padding: 0 15px;
-        font-size: 16px;
-        height: 50px;
-        line-height: 50px;
+        padding: 0 0.54rem;
+        height: 1.75rem;
+        line-height: 1.75rem;
         color: #00b3ff;
         border-bottom: 1px solid #dedede;
       }
@@ -97,14 +92,14 @@
         margin-bottom: 0;
         border-bottom: 1px solid #dedede;
         label {
-          height: 50px;
-          font-size: 16px;
-          line-height: 50px;
+          height: 1.75rem;
+          font-size: 0.57rem;
+          line-height: 1.75rem;
           padding: 0 0 0 15px;
         }
         input {
-          height: 50px;
-          font-size: 16px;
+          height: 1.75rem;
+          font-size: 0.57rem;
           border: none;
           border-radius: 0;
           &:hover {
@@ -127,27 +122,30 @@
       }
     }
     &_space {
-      height: 15px;
+      height: 0.54rem;
       background: #f3f3f3;
     }
     &_company {
       &-select {
         .ivu-form-item-content {
-          width: 80px;
-          height: 49px;
+          width: 2.86rem;
+          height: 1.75rem;
           float: right;
-          line-height: 49px;
+          line-height: 1.75rem;
           text-align: right;
           .ivu-select-selection {
             border: none;
             box-shadow: none;
             .ivu-select-selected-value {
-              font-size: 16px;
+              font-size: 0.57rem;
               padding-left: 0;
             }
           }
         }
       }
+    }
+    button {
+      font-size: 0.57rem;
     }
   }
 

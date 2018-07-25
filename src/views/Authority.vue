@@ -3,7 +3,7 @@
     <div class="authority_content">
       <img src="../assets/img/ico-tanhao.png">
       <p>该功能需要权限认证，请先登录然后再进行业务办理。</p>
-      <Button type="primary">登录</Button>
+      <Button type="primary" size="large">登录</Button>
     </div>
   </div>
 </template>
@@ -31,22 +31,22 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .authority {
-  margin: 15px;
+  margin: 0.54rem;
   text-align: center;
   &_content {
     width: 70%;
     margin: 20% auto;
     img {
       width: 50%;
-      margin-bottom: 20px;
+      margin-bottom: 0.72rem;
     }
     p {
-      font-size: 16px;
+      font-size: 0.57rem;
       color: #333;
-      margin-bottom: 20px;
+      margin-bottom: 0.72rem;
     }
     button {
-      font-size: 14px;
+      font-size: 0.5rem;
       width: 100px;
     }
   }

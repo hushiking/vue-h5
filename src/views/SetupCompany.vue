@@ -2,7 +2,8 @@
   <div class="company">
     <ul>
       <li v-for="(item, index) in items" :key="index">
-        <router-link to="" class="company_apply">进入<br/>办理</router-link>
+        <router-link to="" class="company_apply">进入
+          <br/>办理</router-link>
         <div class="company_item">
           <div class="company_item-title">{{item.title}}</div>
           <div class="company_item-info">{{item.info}}</div>
@@ -36,24 +37,23 @@
       }
     }
   }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-  body {
-    background: #f3f3f3;
-  }
   .company {
+    background: #f3f3f3;
     li {
-      margin-bottom: 15px;
+      margin-bottom: 0.54rem;
       background: #fff;
-      padding: 15px;
+      padding: 0.54rem;
       overflow: hidden;
     }
     &_apply {
       float: right;
-      margin-left: 15px;
-      padding: 6px 12px;
+      margin-left: 0.54rem;
+      padding: 0.22rem 0.43rem;
       cursor: pointer;
       color: #fff;
       border: 1px solid #00b3ff;
@@ -62,16 +62,15 @@
     }
     &_item {
       &-title {
-        font-size: 16px;
         color: #00b3ff;
         overflow: hidden;
         white-space: nowrap;
         border-bottom: 1px solid #eaeaea;
-        padding-bottom: 6px;
-        margin-bottom: 4px;
+        padding-bottom: 0.22rem;
+        margin-bottom: 0.14rem;
       }
       &-info {
-        font-size: 12px;
+        font-size: 0.43rem;
         color: #7d7d7d;
         overflow: hidden;
         white-space: nowrap;
@@ -83,19 +82,20 @@
       bottom: 0;
       width: 100%;
       background: #fff;
-      padding: 15px;
-      line-height: 20px;
+      padding: 0.54rem;
+      line-height: 0.72rem;
       overflow: hidden;
       a {
         float: right;
-        margin-left: 10px;
-        padding: 6px 12px;
+        margin-left: 0.36rem;
+        padding: 0.22rem 0.43rem;
         cursor: pointer;
-        font-size: 14px;
+        font-size: 0.5rem;
         border-radius: 3px;
         background: #fc7742;
         color: #fff;
       }
     }
   }
+
 </style>

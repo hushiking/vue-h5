@@ -30,29 +30,30 @@ export default {
 <style lang="scss">
 .approved {
   &_main {
-    margin: 20px;
-    padding: 5px 15px 0;
+    margin: 0.72rem;
+    padding: 0.18rem 0.54rem 0;
     border: 1px solid #ccc;
     &-title {
-      font-size: 18px;
+      font-size: 0.64rem;
+      font-weight: 700;
       text-align: center;
-      height: 50px;
-      line-height: 50px;
+      height: 1.75rem;
+      line-height: 1.75rem;
       border-bottom: 1px solid #ccc;
     }
     &-content {
-      padding: 20px 0 100px;
-      font-size: 14px;
+      padding: 0.72rem 0 3.57rem;
+      font-size: 0.5rem;
     }
     &-pic {
       text-align: center;
       img {
-        width: 200px;
+        width: 7.14rem;
         vertical-align: bottom;
       }
     }
     &-confirm {
-      margin-top: 50px;
+      margin-top: 1.75rem;
       text-align: center;
     }
   }
