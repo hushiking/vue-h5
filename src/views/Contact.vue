@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <Header />
+    <MyHeader />
     <div>
       <Row>企业联系人</Row>
       <Form class="contact_company" label-position="left" :label-width="100">
@@ -43,28 +43,31 @@
         </FormItem>
       </Form>
     </div>
-    <Row>
-      <Col span="12">
-      <Button type="warning" size="large" long>保存</Button>
-      </Col>
-      <Col span="12">
-      <Button type="primary" size="large" long>下一步</Button>
-      </Col>
-    </Row>
+    <MyBottom :btn-type="btnType" :btn-text="btnText" />
   </div>
 </template>
 
 <script>
-  import Header from '../components/Header'
+  import MyHeader from '../components/MyHeader.vue'
+  import MyBottom from '../components/MyBottom.vue'
   export default {
     data() {
       return {
         val: 'shenfenzheng',
-        val2: 'junrenzheng'
+        val2: 'junrenzheng',
+        btnType: {
+          type1: 'warning',
+          type2: 'primary'
+        },
+        btnText: {
+          text1: '保存',
+          text2: '下一步'
+        }
       }
     },
     components: {
-      Header
+      MyHeader,
+      MyBottom
     }
   }
 
@@ -72,14 +75,10 @@
 
 <style lang="scss">
   .contact {
-    background: #f3f3f3;
     >div {
       background: #fff;
       &:last-child {
         background: #f3f3f3;
-        .ivu-col {
-          padding: 0.72rem;
-        }
       }
       .ivu-row {
         padding: 0 0.54rem;
@@ -143,9 +142,6 @@
           }
         }
       }
-    }
-    button {
-      font-size: 0.57rem;
     }
   }
 

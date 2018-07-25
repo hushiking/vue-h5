@@ -1,6 +1,6 @@
 <template>
   <div class="record">
-    <Header />
+    <MyHeader />
     <div class="record_tip">
       <p>温馨提示:</p>
       <p>为提升企业开办效率，新设立企业办理工商登记时，同步办理公章刻制备案，免费为企业刻制发放法定名称章、财务专用章、发票专用章、合同专用章。</p>
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-  import Header from '../components/Header.vue'
+  import MyHeader from '../components/MyHeader.vue'
   export default {
     data() {
       return {
@@ -32,7 +32,7 @@
       }
     },
     components: {
-      Header
+      MyHeader
     }
   }
 

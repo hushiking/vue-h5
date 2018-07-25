@@ -8,13 +8,15 @@ import Authority from '@/views/Authority'
 import MyBusiness from '@/views/MyBusiness'
 // import MySearch from '@/components/MySearch'
 // import MyCheckBox from '@/components/MyCheckBox'
-import MyInput from '@/components/MyInput'
+// import MyInput from '@/components/MyInput'
+import MyBottom from '@/components/MyBottom'
 import Record from '@/views/Record'
 import RecordCompleted from '@/views/RecordCompleted'
 import Contact from '@/views/Contact'
 import Approved from '@/views/Approved'
 import CompanyBaseinfo from '@/views/CompanyBaseinfo'
 import Lookup from '@/views/Lookup'
+import NonNatural from '@/views/NonNatural'
 
 Vue.use(Router)
 
@@ -117,12 +119,20 @@ export default new Router({
       component: Lookup
     },
     {
+      path: '/non_natural',
+      meta: {
+        name: '企业经营范围'
+      },
+      name: 'non_natural',
+      component: NonNatural
+    },
+    {
       path: '*',
       meta: {
         name: '其他'
       },
       name: 'any',
-      component: MyInput
+      component: MyBottom
     }
   ]
 })

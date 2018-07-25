@@ -1,6 +1,6 @@
 <template>
   <div class="approved">
-    <Header />
+    <MyHeader />
     <div class="approved_main">
       <div class="approved_main-title">审批意见</div>
       <div class="approved_main-content">
@@ -19,10 +19,10 @@
 </template>
 
 <script>
-import Header from '../components/Header'
+import MyHeader from '../components/MyHeader'
 export default {
   components: {
-    Header
+    MyHeader
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div class="lookup">
-    <Header />
+    <MyHeader />
     <div class="lookup_main">
       <MySearch :placeholder="placeholder" />
       <p>以下为根据所输关键字检索出的结果<span>关闭</span></p>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-  import Header from '../components/Header.vue'
+  import MyHeader from '../components/MyHeader.vue'
   import MySearch from '../components/MySearch.vue'
   export default {
     data() {
@@ -38,7 +38,7 @@
       }
     },
     components: {
-      Header,
+      MyHeader,
       MySearch
     }
   }

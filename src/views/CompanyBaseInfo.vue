@@ -1,7 +1,7 @@
 <template>
   <div class="baseinfo">
-    <Header />
-    <Form class="baseinfo_section1" label-position="left">
+    <MyHeader />
+    <Form class="baseinfo_form" label-position="left">
       <FormItem label="营业期限" :label-width="150">
         <Input type="text" placeholder="年"></Input>
       </FormItem>
@@ -47,74 +47,77 @@
         <Input type="text" placeholder="份"></Input>
       </FormItem>
     </Form>
-    <Row>
-      <Col span="12">
-      <Button type="warning" size="large" long>保存</Button>
-      </Col>
-      <Col span="12">
-      <Button type="primary" size="large" long>下一步</Button>
-      </Col>
-    </Row>
+    <MyBottom :btn-type="btnType" :btn-text="btnText" />
   </div>
 </template>
 
 <script>
-  import Header from '../components/Header'
+  import MyHeader from '../components/MyHeader.vue'
+  import MyBottom from '../components/MyBottom.vue'
   export default {
     data() {
       return {
         val: 'shenfenzheng',
         val1: 'shenfenzheng',
-        val2: 'shenfenzheng'
+        val2: 'shenfenzheng',
+        btnType: {
+          type1: 'warning',
+          type2: 'primary'
+        },
+        btnText: {
+          text1: '保存',
+          text2: '下一步'
+        }
       }
     },
     components: {
-      Header
+      MyHeader,
+      MyBottom
     }
   }
 
 </script>
 
 <style lang="scss">
-  body {
-    background: #f3f3f3;
-  }
-
   .baseinfo {
-    background: #fff;
+    height: 100%;
+    background: #f3f3f3;
     &_space {
       height: 0.54rem;
       background: #f3f3f3;
     }
-    .ivu-form-item {
-      margin-bottom: 0;
-      border-bottom: 1px solid #dedede;
-      label {
-        height: 1.75rem;
-        font-size: 0.57rem;
-        line-height: 1.75rem;
-        padding: 0 0 0 0.54rem;
-      }
-      input {
-        height: 1.75rem;
-        font-size: 0.57rem;
-        border: none;
-        border-radius: 0;
-        &:hover {
+    &_form {
+      background: #fff;
+      .ivu-form-item {
+        margin-bottom: 0;
+        border-bottom: 1px solid #dedede;
+        label {
+          height: 1.75rem;
+          font-size: 0.57rem;
+          line-height: 1.75rem;
+          padding: 0 0 0 0.54rem;
+        }
+        input {
+          height: 1.75rem;
+          font-size: 0.57rem;
           border: none;
-        }
-        &:focus {
-          border: none;
-          box-shadow: none;
-        }
-        &::-webkit-input-placeholder {
-          text-align: right;
-        }
-        &::-moz-placeholder {
-          text-align: right;
-        }
-        &:-ms-input-placeholder {
-          text-align: right;
+          border-radius: 0;
+          &:hover {
+            border: none;
+          }
+          &:focus {
+            border: none;
+            box-shadow: none;
+          }
+          &::-webkit-input-placeholder {
+            text-align: right;
+          }
+          &::-moz-placeholder {
+            text-align: right;
+          }
+          &:-ms-input-placeholder {
+            text-align: right;
+          }
         }
       }
     }
@@ -132,17 +135,6 @@
           }
         }
       }
-    }
-    >div {
-      &:last-child {
-        background: #f3f3f3;
-        .ivu-col {
-          padding: 0.72rem;
-        }
-      }
-    }
-    button {
-      font-size: 0.57rem;
     }
   }
 

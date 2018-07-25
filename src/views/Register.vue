@@ -54,10 +54,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-body {
-  background: #f3f3f3;
-}
 .register {
+  height: 100%;
+  background: #f3f3f3;
   input {
     height: 1.75rem;
     font-size: 0.57rem;

@@ -1,6 +1,6 @@
 <template>
   <div class="completed">
-    <Header />
+    <MyHeader />
     <div class="completed_tip">
       <p>温馨提示:</p>
       <p>公安部门与工商部门完善公章刻制即时自动备案机制，对新开办企业免费发放以下四种印章各1枚，企业登记后相关印章将随营业执照一并发放。您可根据需要选择印章种类，其中“法定名称章”必选。与各区政务服务中心（大厅）达成服务意向的刻章企业将为您提供公章刻制服务，名单见下栏。</p>
@@ -56,7 +56,7 @@
   </div>
 </template>
 <script>
-  import Header from '../components/Header.vue'
+  import MyHeader from '../components/MyHeader.vue'
   import MyCheckBox from '../components/MyCheckBox.vue'
   import MySearch from '../components/MySearch.vue'
   export default {
@@ -97,7 +97,7 @@
       }
     },
     components: {
-      Header,
+      MyHeader,
       MyCheckBox,
       MySearch
     }
