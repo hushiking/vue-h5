@@ -25,9 +25,6 @@
         ]
       }
     },
-    mounted() {
-      console.log(this, this.tip, this.holder)
-    },
     methods: {
       remoteMethod1(query) {
         if (query !== '') {

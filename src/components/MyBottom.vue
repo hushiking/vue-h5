@@ -14,6 +14,8 @@
           window.history.go(-1)
         } else if (this.$router.history.current.name === 'company_baseinfo') {
           this.$router.push({ name: 'approved' })
+        } else if (this.$router.history.current.name === 'key_personnel') {
+          this.$router.push({ name: 'key_info' })
         }
       }
     }

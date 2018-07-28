@@ -1,7 +1,7 @@
 <template>
-  <div class="lookup">
+  <div class="scope">
     <MyHeader />
-    <div class="lookup_main">
+    <div class="scope_main">
       <MySearch :placeholder="placeholder" />
       <p>以下为根据所输关键字检索出的结果<span>关闭</span></p>
       <Collapse v-model="value1">
@@ -49,7 +49,7 @@
 body {
   background: #fff;
 }
-.lookup {
+.scope {
   font-size: 0.57rem;
   &_main {
     padding: 0.57rem;

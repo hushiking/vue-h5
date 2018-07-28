@@ -19,11 +19,11 @@
       <FormItem>
         <div class="personnel_tip">(公司需根据情况选择是否成立监事会；监事，必须为董事长(执行董事)、董事、经理、财务之外的人员)</div>
         <RadioGroup v-model="value1" vertical>
-          <Radio label="不设立董事会"></Radio>
-          <Radio label="设立董事会">
+          <Radio label="不设立监事会，监事1-2人"></Radio>
+          <Radio label="设立监事会">
             <div class="personnel_radio">
-              <p>设立董事会</p>
-              <span>(董事会成员为3-13人，其中董事长1人)</span>
+              <p>设立监事会</p>
+              <span>(监事人数至少为3人，其中设监事会主席1人)</span>
             </div>
           </Radio>
         </RadioGroup>

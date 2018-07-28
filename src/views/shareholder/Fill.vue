@@ -42,7 +42,7 @@
           type: 'company',
           header: '北京乐海丰田科技发展有限公司',
           fund: '100万元',
-          info: true
+          info: false
         },
         btnType: {
           type1: 'warning',

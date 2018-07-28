@@ -1,13 +1,13 @@
 <template>
-  <div class="others">
+  <div class="notself">
     <Form :model="formInline">
       <FormItem>
-        <Input type="text" v-model="formInline.number" placeholder="名称文号中7位编号" class="others_number"></Input>
+        <Input type="text" v-model="formInline.number" placeholder="名称文号中7位编号" class="notself_number"></Input>
       </FormItem>
       <FormItem>
-        <Input type="password" v-model="formInline.id" placeholder="名称申请人证件号码" class="others_id"></Input>
+        <Input type="password" v-model="formInline.id" placeholder="名称申请人证件号码" class="notself_id"></Input>
       </FormItem>
-      <div class="others_apply">
+      <div class="notself_apply">
         <Button type="primary" long @click="handleSubmit('formInline')">进入办理</Button>
       </div>
     </Form>
@@ -40,7 +40,7 @@
     padding: 0;
     background: #f3f3f3;
   }
-  .others {
+  .notself {
     .ivu-form-item {
       margin: 0;
     }

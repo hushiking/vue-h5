@@ -1,18 +1,17 @@
 <template>
-  <div class="company">
-    <router-view></router-view>
+  <div class="establish">
     <ul>
       <li v-for="(item, index) in items" :key="index">
-        <router-link to="" class="company_apply">进入
+        <router-link to="" class="establish_apply">进入
           <br/>办理</router-link>
-        <div class="company_item">
-          <div class="company_item-title">{{item.title}}</div>
-          <div class="company_item-info">{{item.info}}</div>
+        <div class="establish_item">
+          <div class="establish_item-title">{{item.title}}</div>
+          <div class="establish_item-info">{{item.info}}</div>
         </div>
       </li>
     </ul>
-    <div class="company_fix">
-      <router-link :to="{ name: 'not_self' }">非本账号申请</router-link>
+    <div class="establish_fix">
+      <router-link :to="{ name: 'notself' }">非本账号申请</router-link>
       <div>如果非本账号申请的名称需要通过系统校验后可继续办理业务</div>
     </div>
   </div>
@@ -43,8 +42,8 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss">
-  .company {
+<style lang="scss" scoped>
+  .establish {
     height: 100%;
     background: #f3f3f3;
     li {

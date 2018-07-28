@@ -1,27 +1,27 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/views/Login'
-import SetupCompany from '@/views/SetupCompany'
-import ContinueSetup from '@/views/ContinueSetup'
+import ProposedEstablish from '@/views/ProposedEstablish'
+import ContinueEstablish from '@/views/ContinueEstablish'
 import BusinessConfirm from '@/views/BusinessConfirm'
 import BusinessConfirmShow from '@/views/BusinessConfirmShow'
 import BusinessConfirmProcess from '@/views/BusinessConfirmProcess'
-import NotSelf from '@/views/NotSelf'
+import ProposedNotself from '@/views/ProposedNotself'
 import Register from '@/views/Register'
 import Authority from '@/views/Authority'
 import MyBusiness from '@/views/MyBusiness'
-// import MySearch from '@/components/MySearch'
+import MySearch from '@/components/MySearch'
 // import MyCheckBox from '@/components/MyCheckBox'
 // import MyBottom from '@/components/MyBottom'
 // import MyRadio from '@/components/MyRadio'
-// import MyInput from '@/components/MyInput'
-import MyCard from '@/components/MyCard'
+// import MyCollapse from '@/components/MyCollapse'
+// import MyCard from '@/components/MyCard'
 import Record from '@/views/Record'
 import RecordCompleted from '@/views/RecordCompleted'
 import Contact from '@/views/Contact'
 import CompanyBaseinfo from '@/views/CompanyBaseinfo'
-import Approved from '@/views/Approved'
-import Lookup from '@/views/Lookup'
+import CompanyApproved from '@/views/CompanyApproved'
+import BusinessScope from '@/views/BusinessScope'
 import Shareholder from '@/views/shareholder/Shareholder'
 import Fill from '@/views/shareholder/Fill'
 import NonNatural from '@/views/shareholder/NonNatural'
@@ -44,28 +44,157 @@ export default new Router({
       component: Login
     },
     {
-      path: '/plan_setup',
+      path: '/establish',
       meta: {
         title: '拟设立公司'
       },
-      name: 'plan_setup',
-      component: SetupCompany
+      name: 'proposed_establish',
+      component: ProposedEstablish
     },
     {
-      path: '/not_self',
+      path: '/notself',
       meta: {
         title: '拟设立公司'
       },
-      name: 'not_self',
-      component: NotSelf
+      name: 'proposed_notself',
+      component: ProposedNotself
     },
     {
-      path: '/continue_setup',
+      path: '/my_business',
       meta: {
         title: '我的业务'
       },
-      name: 'continue_setup',
-      component: ContinueSetup
+      name: 'my_business',
+      component: MyBusiness
+    },
+    {
+      path: '/continue',
+      meta: {
+        title: '我的业务'
+      },
+      name: 'continue_establish',
+      component: ContinueEstablish
+    },
+    {
+      path: '/baseinfo',
+      meta: {
+        title: '企业基本信息'
+      },
+      name: 'company_baseinfo',
+      component: CompanyBaseinfo
+    },
+    {
+      path: '/approved',
+      meta: {
+        title: '企业基本信息'
+      },
+      name: 'company_approved',
+      component: CompanyApproved
+    },
+    {
+      path: '/scope',
+      meta: {
+        title: '企业经营范围'
+      },
+      name: 'business_scope',
+      component: BusinessScope
+    },
+    {
+      path: '/shareholder',
+      name: 'shareholder',
+      component: Shareholder,
+      redirect: {
+        name: 'shareholder_fill'
+      },
+      children: [{
+          path: 'fill',
+          meta: {
+            title: '股东信息填报'
+          },
+          name: 'shareholder_fill',
+          component: Fill
+        },
+        {
+          path: 'natural',
+          meta: {
+            title: '股东信息填报'
+          },
+          name: 'shareholder_natural',
+          component: Natural
+        },
+        {
+          path: 'non_natural',
+          meta: {
+            title: '股东信息填报'
+          },
+          name: 'shareholder_non_natural',
+          component: NonNatural
+        }
+      ]
+    },
+    {
+      path: '/key_personnel',
+      meta: {
+        title: '主要人员信息'
+      },
+      name: 'key_personnel',
+      component: KeyPersonnel
+    },
+    {
+      path: '/key_info',
+      meta: {
+        title: '主要人员信息'
+      },
+      name: 'key_info',
+      component: KeyInfo
+    },
+    {
+      path: '/contact',
+      meta: {
+        title: '企业联系人'
+      },
+      name: 'contact',
+      component: Contact
+    },
+    {
+      path: '/addition',
+      meta: {
+        title: '补充信息'
+      },
+      name: 'addition',
+      component: Addition
+    },
+    {
+      path: '/record',
+      meta: {
+        title: '备案填报'
+      },
+      name: 'record',
+      component: Record
+    },
+    {
+      path: '/record_completed',
+      meta: {
+        title: '备案填报'
+      },
+      name: 'record_completed',
+      component: RecordCompleted
+    },
+    {
+      path: '/process',
+      meta: {
+        title: '进度查看'
+      },
+      name: 'process',
+      component: Process
+    },
+    {
+      path: '/process_show',
+      meta: {
+        title: '进度查看'
+      },
+      name: 'process_show',
+      component: ProcessShow
     },
     {
       path: '/business_confirm',
@@ -108,141 +237,12 @@ export default new Router({
       component: Authority
     },
     {
-      path: '/my_business',
-      meta: {
-        title: '我的业务'
-      },
-      name: 'my_business',
-      component: MyBusiness
-    },
-    {
-      path: '/record',
-      meta: {
-        title: '备案填报'
-      },
-      name: 'record',
-      component: Record
-    },
-    {
-      path: '/record_completed',
-      meta: {
-        title: '备案填报'
-      },
-      name: 'record_completed',
-      component: RecordCompleted
-    },
-    {
-      path: '/contact',
-      meta: {
-        title: '企业联系人'
-      },
-      name: 'contact',
-      component: Contact
-    },
-    {
-      path: '/baseinfo',
-      meta: {
-        title: '企业基本信息'
-      },
-      name: 'company_baseinfo',
-      component: CompanyBaseinfo
-    },
-    {
-      path: '/approved',
-      meta: {
-        title: '企业基本信息'
-      },
-      name: 'approved',
-      component: Approved
-    },
-    {
-      path: '/lookup',
-      meta: {
-        title: '企业经营范围'
-      },
-      name: 'lookup',
-      component: Lookup
-    },
-    {
-      path: '/shareholder',
-      name: 'shareholder',
-      component: Shareholder,
-      redirect: {
-        name: 'shareholder_fill'
-      },
-      children: [{
-          path: 'fill',
-          meta: {
-            title: '股东信息填报'
-          },
-          name: 'shareholder_fill',
-          component: Fill
-        },
-        {
-          path: '/natural',
-          meta: {
-            title: '股东信息填报'
-          },
-          name: 'shareholder_natural',
-          component: Natural
-        },
-        {
-          path: '/non_natural',
-          meta: {
-            title: '股东信息填报'
-          },
-          name: 'shareholder_non_natural',
-          component: NonNatural
-        }
-      ]
-    },
-    {
-      path: '/addition',
-      meta: {
-        title: '补充信息'
-      },
-      name: 'addition',
-      component: Addition
-    },
-    {
-      path: '/process',
-      meta: {
-        title: '进度查看'
-      },
-      name: 'process',
-      component: Process
-    },
-    {
-      path: '/process_show',
-      meta: {
-        title: '进度查看'
-      },
-      name: 'process_show',
-      component: ProcessShow
-    },
-    {
-      path: '/key_personnel',
-      meta: {
-        title: '主要人员信息'
-      },
-      name: 'key_personnel',
-      component: KeyPersonnel
-    },
-    {
-      path: '/key_info',
-      meta: {
-        title: '主要人员信息'
-      },
-      name: 'key_info',
-      component: KeyInfo
-    },
-    {
       path: '*',
       meta: {
         title: '其他'
       },
       name: 'any',
-      component: MyCard
+      component: MySearch
     }
   ]
 })
