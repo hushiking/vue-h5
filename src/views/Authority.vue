@@ -46,8 +46,8 @@ export default {
       margin-bottom: 0.72rem;
     }
     button {
-      font-size: 0.5rem;
-      width: 100px;
+      font-size: 0.57rem;
+      width: 3.6rem;
     }
   }
 }

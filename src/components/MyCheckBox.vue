@@ -4,28 +4,30 @@
 </template>
 
 <script>
-export default {
-  // 父组件传过来的值
-  props: ['value'],
-  data() {
-    return {
-      checked: this.isChecked
+  export default {
+    // 父组件传过来的值
+    props: ['value'],
+    data() {
+      return {
+        checked: this.isChecked
+      }
+    },
+    methods: {
+      // 向Login父组件发射事件
+      // change(event) {
+      //   console.log(event.target.checked)
+      //   this.$emit('input', event.target.checked)
+      // }
     }
-  },
-  methods: {
-    // 向Login父组件发射事件
-    // change(event) {
-    //   console.log(event.target.checked)
-    //   this.$emit('input', event.target.checked)
-    // }
   }
-}
+
 </script>
 
 <style lang="scss" scoped>
   input {
     border: none;
     outline: none;
+    position: absolute;
     -webkit-appearance: none;
   }
 
@@ -33,7 +35,7 @@ export default {
     color: #aaa;
     content: "\F401";
     font-family: Ionicons;
-    font-size: 28px;
+    font-size: 1rem;
     -webkit-font-smoothing: antialiased;
   }
 

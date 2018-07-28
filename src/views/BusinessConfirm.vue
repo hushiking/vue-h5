@@ -3,12 +3,16 @@
     <div class="confirm_item">
       <div class="confirm_item-title">{{item.title}}</div>
       <div class="confirm_item-info">
-        <span>业务类型：<em>{{item.type}}</em></span>
-        <span>提交时间：<em>{{item.time}}</em></span>
+        <span>业务类型：
+          <em>{{item.type}}</em>
+        </span>
+        <span>提交时间：
+          <em>{{item.time}}</em>
+        </span>
       </div>
       <Input type="textarea" v-model="value" placeholder="请填写退回原因" :rows="8"></Input>
     </div>
-    <div class="confirm_sure">
+    <div class="confirm_bottom">
       <Button type="primary">确定退回</Button>
     </div>
   </div>
@@ -48,7 +52,7 @@
       &-info {
         display: flex;
         justify-content: space-between;
-        font-size: 0.43rem;
+        font-size: 0.5rem;
         color: #7d7d7d;
         overflow: hidden;
         white-space: nowrap;
@@ -58,7 +62,7 @@
         width: 100% !important;
       }
     }
-    &_sure {
+    &_bottom {
       padding: 0.72rem;
       button {
         display: block;

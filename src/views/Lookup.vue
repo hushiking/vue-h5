@@ -17,9 +17,9 @@
           依据前置许可部门批准内容核定（<span>烟草</span>）
           <p slot="content">
             <strong><span>烟草</span>制品业</strong>
-            <em style="display: block;text-indent: 28px;"><span>烟草</span>代用品制雪茄烟、<span>烟草</span>代用品制卷烟</em>
+            <em style="display: block;text-indent: 1.14rem;"><span>烟草</span>代用品制雪茄烟、<span>烟草</span>代用品制卷烟</em>
             <strong>其他<span>烟草</span>制品制造</strong>
-            <em style="display: block;text-indent: 28px;"><span>烟草</span>精汁</em>
+            <em style="display: block;text-indent: 1.14rem;"><span>烟草</span>精汁</em>
           </p>
         </Panel>
       </Collapse>
@@ -71,13 +71,15 @@ body {
         }
         .ivu-collapse-header {
           padding-left: 0;
+          height: 1.75rem;
+          line-height: 1.75rem;
           font-weight: 700;
           text-overflow: ellipsis;
           white-space: nowrap;
           overflow: hidden;
           i {
             position: absolute;
-            top: 14px;
+            top: 0.57rem;
             right: 0;
             &:before {
               content: "\F123"

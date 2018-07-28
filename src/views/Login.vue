@@ -88,13 +88,11 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-  body {
-    padding: 15px;
-  }
-
   .login {
+    height: 100%;
+    padding: 0.54rem;
     &_button {
-      font-size: 16px;
+      font-size: 0.57rem;
       display: block;
       margin: 0 auto;
       width: 100%;
@@ -105,45 +103,45 @@
       border: 1px solid #ccc;
     }
     input {
-      height: 50px;
-      font-size: 16px;
+      height: 1.75rem;
+      font-size: 0.57rem;
       &:focus {
         box-shadow: none;
       }
     }
     &_input {
-      margin-top: 20px;
+      margin-top: 0.72rem;
       &-user {
         input.ivu-input {
-          background: url(../assets/img/login-ico1.png) no-repeat 15px center;
-          background-size: auto 20px;
-          text-indent: 30px;
+          background: url(../assets/img/login-ico1.png) no-repeat 0.54rem center;
+          background-size: auto 0.72rem;
+          text-indent: 1.1rem;
         }
       }
       &-pass {
         input.ivu-input {
-          background: url(../assets/img/login-ico2.png) no-repeat 15px center;
-          background-size: auto 20px;
-          text-indent: 30px;
+          background: url(../assets/img/login-ico2.png) no-repeat 0.54rem center;
+          background-size: auto 0.72rem;
+          text-indent: 1.1rem;
         }
       }
       button {
-        font-size: 16px;
+        font-size: 0.57rem;
       }
     }
     footer {
       text-align: center;
       color: #929292;
-      font-size: 14px;
-      height: 50px;
-      line-height: 50px;
+      font-size: 0.5rem;
+      height: 1.75rem;
+      line-height: 1.75rem;
       position: absolute;
       width: 100%;
-      left: 0px;
-      bottom: 0px;
+      left: 0;
+      bottom: 0;
       img {
-        width: 20px;
-        margin-right: 5px;
+        width: 0.72rem;
+        margin-right: 0.18rem;
         vertical-align: middle;
       }
     }
@@ -156,28 +154,24 @@
           border-radius: 0;
         }
         &-body {
-          font-size: 14px;
+          font-size: 0.5rem;
         }
       }
       &-center {
         text-align: center;
       }
       &-tip {
-        text-indent: 28px;
+        text-indent: 1rem;
       }
       &-confirm {
         position: relative;
-        margin-top: 30px;
+        margin-top: 1.1rem;
         text-align: center;
         input {
           position: relative;
-          right: 0;
-          top: 5px;
-          width: 28px;
-          height: 26px;
-        }
-        label {
-          line-height: 1.1;
+          left: 1.44rem;
+          top: 50%;
+          transform: translateY(-50%)
         }
       }
       .ivu-modal-footer {
@@ -185,6 +179,7 @@
         border: none;
         button {
           border-radius: 0;
+          font-size: 0.57rem;
         }
       }
     }

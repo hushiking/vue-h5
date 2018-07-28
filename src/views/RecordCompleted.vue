@@ -129,8 +129,10 @@
         >div {
           display: flex;
           align-items: center;
+          position: relative;
+          line-height: 1.25rem;
           input {
-            margin-right: 0.36rem;
+            left: -1rem;
           }
         }
       }
@@ -145,10 +147,14 @@
       &-items {
         >div {
           display: flex;
-          padding: 0.36rem 0;
+          padding: 0.36rem 0 0.36rem 1rem;
+          position: relative;
+          align-items: center;
           border-bottom: 1px solid #ccc;
           input {
             margin-right: 0.36rem;
+            top: 50%;
+            transform: translateY(-50%);
           }
         }
       }

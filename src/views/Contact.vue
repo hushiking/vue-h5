@@ -94,7 +94,7 @@
           height: 1.75rem;
           font-size: 0.57rem;
           line-height: 1.75rem;
-          padding: 0 0 0 15px;
+          padding: 0 0 0 0.54rem;
         }
         input {
           height: 1.75rem;

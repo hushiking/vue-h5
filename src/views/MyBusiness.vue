@@ -96,32 +96,32 @@
     }
     &_col {
       background: url(../assets/img/check.png) no-repeat top right;
-      background-size: 30px auto;
+      background-size: 1.5rem auto;
       &:nth-child(odd) {
         border-right: 1px solid #ccc;
       }
       >a {
         display: block;
         position: relative;
-        padding: 15px;
+        padding: 0.54rem;
         text-align: center;
         font-size: 18px;
       }
       &-num {
         color: #CCCCCC;
         position: absolute;
-        left: 10px;
-        top: 10px
+        left: 0.36rem;
+        top: 0.36rem;
       }
       &-icon {
         display: block;
-        height: 70px;
-        margin-bottom: 10px;
+        height: 2.5rem;
+        margin-bottom: 0.36rem;
       }
       @for $i from 1 through 8 {
         .icon-menu#{$i} {
           background: url(../assets/img/menu#{$i}.png) no-repeat center center;
-          background-size: auto 50px;
+          background-size: auto 1.75rem;
         }
       }
     }

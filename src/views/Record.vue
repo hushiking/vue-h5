@@ -18,7 +18,7 @@
       </RadioGroup>
     </div>
     <div class="record_next">
-      <Button type="primary" size="large">下一步</Button>
+      <Button type="primary" @click="go">下一步</Button>
     </div>
   </div>
 </template>
@@ -29,6 +29,11 @@
     data() {
       return {
         badge: '免费刻章'
+      }
+    },
+    methods: {
+      go() {
+        this.$router.push({ name: 'record_completed' })
       }
     },
     components: {
@@ -44,13 +49,13 @@
       padding: 0 0.54rem;
       >p {
         font-size: 0.5rem;
-        margin: 10px 0;
+        margin: 0.32rem 0;
         &:first-child {
           font-size: 0.57rem;
           margin: 0.54rem 0;
         }
         &:nth-child(2) {
-          text-indent: 28px;
+          text-indent: 1rem;
           margin: 0.54rem 0;
         }
       }
@@ -59,8 +64,8 @@
       // font-size: 0.57rem;
       text-align: center;
       img {
-        height: 100px;
-        width: 100px;
+        height: 3.6rem;
+        width: 3.6rem;
         border: 1px solid #eee;
       }
       label {
@@ -72,6 +77,7 @@
       text-align: center;
       button {
         font-size: 0.57rem;
+        padding: 0.28rem 1.44rem;
       }
     }
   }

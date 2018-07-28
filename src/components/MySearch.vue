@@ -56,28 +56,35 @@
     position: relative;
     i {
       position: absolute;
-      top: 7px;
-      left: 12px;
-      font-size: 20px;
+      top: 0.25rem;
+      left: 0.43rem;
+      font-size: 0.72rem;
       color: #aaa;
       z-index: 10;
     }
-    .ivu-select-selection {
-      border-radius: 32px;
-      background: #f3f3f3;
-      input {
-        padding-left: 1.25rem;
-        &::-webkit-input-placeholder {
-          color: #aaa;
-          font-size: 0.5rem;
-        }
-        &::-moz-placeholder {
-          color: #aaa;
-          font-size: 0.5rem;
-        }
-        &:-ms-input-placeholder {
-          color: #aaa;
-          font-size: 0.5rem;
+    .ivu-select {
+      .ivu-select-selection {
+        border-radius: 1.15rem;
+        height: 1.15rem;
+        line-height: 1.15rem;
+        background: #f3f3f3;
+        input {
+          padding-left: 1.25rem;
+          height: 1.15rem;
+          line-height: 1.15rem;
+          font-size: 0.57rem;
+          &::-webkit-input-placeholder {
+            color: #aaa;
+            font-size: 0.57rem;
+          }
+          &::-moz-placeholder {
+            color: #aaa;
+            font-size: 0.57rem;
+          }
+          &:-ms-input-placeholder {
+            color: #aaa;
+            font-size: 0.57rem;
+          }
         }
       }
     }

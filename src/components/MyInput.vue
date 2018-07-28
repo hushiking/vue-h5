@@ -6,5 +6,6 @@
   </Panel>
   <Icon type="ios-arrow-down"></Icon>
   <Icon type="chevron-down"></Icon>
+  <Checkbox>Checkbox</Checkbox>
 </Collapse>
 </template>

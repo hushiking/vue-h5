@@ -1,5 +1,6 @@
 <template>
   <div class="company">
+    <router-view></router-view>
     <ul>
       <li v-for="(item, index) in items" :key="index">
         <router-link to="" class="company_apply">进入
