@@ -7,12 +7,6 @@
   </Row>
 </template>
 
-<style lang="scss">
-  body {
-    padding: 0;
-  }
-
-</style>
 <style lang="scss" scoped>
   .header {
     color: #fff;

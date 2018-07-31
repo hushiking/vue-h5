@@ -58,7 +58,7 @@
     methods: {
       handleSubmit(name) {
         this.$router.push({
-          name: 'company'
+          name: 'proposed_establish'
         })
       },
       close() {
@@ -66,10 +66,6 @@
         if (this.flag) {
           localStorage.setItem('tip', 'false')
         }
-      },
-      // 与子组件交互的方法
-      check(val) {
-        this.flag = val
       }
     },
     mounted() {
@@ -169,7 +165,7 @@
         text-align: center;
         input {
           position: relative;
-          left: 1.44rem;
+          left: 1.35rem;
           top: 50%;
           transform: translateY(-50%)
         }

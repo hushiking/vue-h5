@@ -47,7 +47,9 @@
         <Input type="text" placeholder="份"></Input>
       </FormItem>
     </Form>
-    <MyBottom :btn-type="btnType" :btn-text="btnText" />
+    <div class="baseinfo_bottom">
+      <MyBottom :btn-type="btnType" :btn-text="btnText" />
+    </div>
   </div>
 </template>
 
@@ -135,6 +137,9 @@
           }
         }
       }
+    }
+    &_bottom {
+      background: #f3f3f3;
     }
   }
 

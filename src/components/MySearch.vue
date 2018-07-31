@@ -9,10 +9,10 @@
 
 <script>
   export default {
-    props: ['placeholder'],
+    props: ['placeholder', 'searchValue'],
     data() {
       return {
-        model13: '',
+        model13: this.searchValue || '',
         loading1: false,
         options1: [],
         list: ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
@@ -61,26 +61,28 @@
     }
     .ivu-select {
       .ivu-select-selection {
-        border-radius: 1.15rem;
-        height: 1.15rem;
-        line-height: 1.15rem;
+        border-radius: 1.22rem;
+        height: 1.22rem;
+        line-height: 1.22rem;
         background: #f3f3f3;
+        border: none;
         input {
           padding-left: 1.25rem;
-          height: 1.15rem;
-          line-height: 1.15rem;
-          font-size: 0.57rem;
+          height: 1.22rem;
+          line-height: 1.22rem;
+          font-size: 0.5rem;
+          color: #aaa;
           &::-webkit-input-placeholder {
             color: #aaa;
-            font-size: 0.57rem;
+            font-size: 0.5rem;
           }
           &::-moz-placeholder {
             color: #aaa;
-            font-size: 0.57rem;
+            font-size: 0.5rem;
           }
           &:-ms-input-placeholder {
             color: #aaa;
-            font-size: 0.57rem;
+            font-size: 0.5rem;
           }
         }
       }

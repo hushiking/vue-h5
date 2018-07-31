@@ -3,18 +3,18 @@ import Router from 'vue-router'
 import Login from '@/views/Login'
 import ProposedEstablish from '@/views/ProposedEstablish'
 import ContinueEstablish from '@/views/ContinueEstablish'
+import ProposedNotself from '@/views/ProposedNotself'
 import BusinessConfirm from '@/views/BusinessConfirm'
 import BusinessConfirmShow from '@/views/BusinessConfirmShow'
 import BusinessConfirmProcess from '@/views/BusinessConfirmProcess'
-import ProposedNotself from '@/views/ProposedNotself'
 import Register from '@/views/Register'
 import Authority from '@/views/Authority'
 import MyBusiness from '@/views/MyBusiness'
-import MySearch from '@/components/MySearch'
+// import MySearch from '@/components/MySearch'
 // import MyCheckBox from '@/components/MyCheckBox'
 // import MyBottom from '@/components/MyBottom'
 // import MyRadio from '@/components/MyRadio'
-// import MyCollapse from '@/components/MyCollapse'
+import MyCollapse from '@/components/MyCollapse'
 // import MyCard from '@/components/MyCard'
 import Record from '@/views/Record'
 import RecordCompleted from '@/views/RecordCompleted'
@@ -22,19 +22,27 @@ import Contact from '@/views/Contact'
 import CompanyBaseinfo from '@/views/CompanyBaseinfo'
 import CompanyApproved from '@/views/CompanyApproved'
 import BusinessScope from '@/views/BusinessScope'
+import BusinessScopeLookup from '@/views/BusinessScopeLookup'
+import BusinessScopeModal from '@/views/BusinessScopeModal'
 import Shareholder from '@/views/shareholder/Shareholder'
 import Fill from '@/views/shareholder/Fill'
 import NonNatural from '@/views/shareholder/NonNatural'
 import Natural from '@/views/shareholder/Natural'
 import Addition from '@/views/Addition'
-import ProcessShow from '@/views/ProcessShow'
+import ProcessList from '@/views/ProcessList'
 import Process from '@/views/Process'
 import KeyPersonnel from '@/views/KeyPersonnel'
+import KeyPersonnelAdd from '@/views/KeyPersonnelAdd'
 import KeyInfo from '@/views/KeyInfo'
+import FileUpload from '@/views/FileUpload'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
+  scrollBehavior: () => ({
+    y: 0
+  }),
   routes: [{
       path: '/',
       meta: {
@@ -100,6 +108,22 @@ export default new Router({
       component: BusinessScope
     },
     {
+      path: '/lookup',
+      meta: {
+        title: '企业经营范围'
+      },
+      name: 'business_scope_lookup',
+      component: BusinessScopeLookup
+    },
+    {
+      path: '/modal',
+      meta: {
+        title: '企业经营范围'
+      },
+      name: 'business_scope_modal',
+      component: BusinessScopeModal
+    },
+    {
       path: '/shareholder',
       name: 'shareholder',
       component: Shareholder,
@@ -133,7 +157,7 @@ export default new Router({
       ]
     },
     {
-      path: '/key_personnel',
+      path: '/personnel',
       meta: {
         title: '主要人员信息'
       },
@@ -141,7 +165,15 @@ export default new Router({
       component: KeyPersonnel
     },
     {
-      path: '/key_info',
+      path: '/personnel_add',
+      meta: {
+        title: '主要人员信息'
+      },
+      name: 'key_personnel_add',
+      component: KeyPersonnelAdd
+    },
+    {
+      path: '/personnel_info',
       meta: {
         title: '主要人员信息'
       },
@@ -155,6 +187,14 @@ export default new Router({
       },
       name: 'contact',
       component: Contact
+    },
+    {
+      path: '/file_upload',
+      meta: {
+        title: '文件上传'
+      },
+      name: 'file_upload',
+      component: FileUpload
     },
     {
       path: '/addition',
@@ -189,12 +229,12 @@ export default new Router({
       component: Process
     },
     {
-      path: '/process_show',
+      path: '/process_list',
       meta: {
         title: '进度查看'
       },
-      name: 'process_show',
-      component: ProcessShow
+      name: 'process_list',
+      component: ProcessList
     },
     {
       path: '/business_confirm',
@@ -242,7 +282,7 @@ export default new Router({
         title: '其他'
       },
       name: 'any',
-      component: MySearch
+      component: MyCollapse
     }
   ]
 })

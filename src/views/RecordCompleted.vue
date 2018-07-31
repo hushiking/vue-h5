@@ -46,8 +46,10 @@
       </div>
       <div class="completed_company-page">
         <span>共2条记录</span>
-        <Button>下一页</Button>
-        <Button>上一页</Button>
+        <div>
+          <Button>上一页</Button>
+          <Button>下一页</Button>
+        </div>
       </div>
     </div>
     <div class="completed_btn">
@@ -147,23 +149,23 @@
       &-items {
         >div {
           display: flex;
-          padding: 0.36rem 0 0.36rem 1rem;
+          padding: 0.36rem 0 0.36rem 1.14rem;
           position: relative;
           align-items: center;
           border-bottom: 1px solid #ccc;
           input {
-            margin-right: 0.36rem;
             top: 50%;
-            transform: translateY(-50%);
+            transform: translate3d(-130%, -50%, 0);
           }
         }
       }
       &-page {
         padding: 0.36rem 0 0;
         height: 1.5rem;
-        line-height: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         button {
-          float: right;
           margin: 0 0.18rem;
           color: #00b3ff;
           background: #fff;

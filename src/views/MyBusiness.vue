@@ -41,7 +41,7 @@
         </router-link>
       </Col>
       <Col span="12" class="business_col">
-        <router-link :to="{ name: '' }">
+        <router-link :to="{ name: 'file_upload' }">
           <span class="business_col-num">6</span>
           <span class="business_col-icon icon-menu6"></span>
           文件上传
@@ -89,12 +89,18 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss">
+<style lang="scss" scoped>
   .business {
+    height: 100%;
     .ivu-row {
+      height: 25%;
       border-bottom: 1px solid #ccc;
+      &:last-child {
+        border-bottom: 0;
+      }
     }
     &_col {
+      height: 100%;
       background: url(../assets/img/check.png) no-repeat top right;
       background-size: 1.5rem auto;
       &:nth-child(odd) {
@@ -106,16 +112,17 @@
         padding: 0.54rem;
         text-align: center;
         font-size: 18px;
+        color: #000;
       }
       &-num {
         color: #CCCCCC;
         position: absolute;
-        left: 0.36rem;
-        top: 0.36rem;
+        left: 0.5rem;
+        top: 0.5rem;
       }
       &-icon {
         display: block;
-        height: 2.5rem;
+        height: 3.2rem;
         margin-bottom: 0.36rem;
       }
       @for $i from 1 through 8 {

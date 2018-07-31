@@ -1,16 +1,16 @@
 <template>
   <div class="natural">
-    <Form class="natural_person" label-position="left" :label-width="100">
-      <FormItem label="姓名">
+    <Form class="natural_person" label-position="left">
+      <FormItem label="姓名" :label-width="100">
         <Input type="text" placeholder="请输入姓名"></Input>
       </FormItem>
-      <FormItem label="身份证号码">
+      <FormItem label="身份证号码" :label-width="100">
         <Input type="text" placeholder="请输入身份证号码"></Input>
       </FormItem>
       <FormItem :label-width="140" label="身份证登记地址">
         <Input type="text" placeholder="请输入身份证登记地址"></Input>
       </FormItem>
-      <FormItem label="民族">
+      <FormItem label="民族" :label-width="100">
         <Input type="text" placeholder="请输入民族"></Input>
       </FormItem>
       <div class="natural_space"></div>
@@ -22,10 +22,10 @@
           <Option value="junrenzheng">请选择出资方式</Option>
         </Select>
       </FormItem>
-      <FormItem label="出资金额">
+      <FormItem label="出资金额" :label-width="100">
         <Input type="text" placeholder="请输入出资金额"></Input>
       </FormItem>
-      <FormItem label="出资时间">
+      <FormItem label="出资时间" :label-width="100">
         <Input type="text" placeholder="请输入出资时间"></Input>
       </FormItem>
       <div class="natural_add">

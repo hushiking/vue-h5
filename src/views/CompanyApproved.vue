@@ -51,6 +51,13 @@
       &-content {
         padding: 0.72rem 0 3.57rem;
         font-size: 0.5rem;
+        p {
+          &:nth-child(2) {
+            span {
+              color: #f6787b;
+            }
+          }
+        }
       }
       &-pic {
         text-align: center;

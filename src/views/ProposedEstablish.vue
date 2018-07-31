@@ -11,8 +11,8 @@
       </li>
     </ul>
     <div class="establish_fix">
-      <router-link :to="{ name: 'notself' }">非本账号申请</router-link>
       <div>如果非本账号申请的名称需要通过系统校验后可继续办理业务</div>
+      <router-link :to="{ name: 'proposed_notself' }">非本账号申请</router-link>
     </div>
   </div>
 </template>
@@ -83,16 +83,18 @@
       left: 0;
       bottom: 0;
       width: 100%;
-      background: #fff;
       padding: 0.54rem;
+      display: flex;
+      align-items: center;
+      background: #fff;
       font-size: 0.5rem;
-      line-height: 0.72rem;
       overflow: hidden;
       a {
-        float: right;
         margin-left: 0.36rem;
-        padding: 0.22rem 0.43rem;
-        cursor: pointer;
+        word-break: keep-all;
+        padding: 0 0.5rem;
+        height: 1.5rem;
+        line-height: 1.5rem;
         font-size: 0.5rem;
         border-radius: 3px;
         background: #fc7742;

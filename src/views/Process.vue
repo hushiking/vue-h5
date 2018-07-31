@@ -70,17 +70,23 @@
       white-space: nowrap;
       border-bottom: 1px solid #eaeaea;
       padding-bottom: 0.22rem;
-      margin-bottom: 0.14rem;
+      margin-bottom: 0.32rem;
       font-weight: 700;
     }
     &_info {
       font-size: 0.5rem;
+      p {
+        line-height: 1.75;
+      }
       span {
         color:#cf4553;
       }
     }
     &_person {
       padding: 0.32rem 0;
+      button {
+        margin-right: 0.32rem;
+      }
       span {
         font-size: 0.57rem;
         margin-right: 0.16rem;

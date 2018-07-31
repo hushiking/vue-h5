@@ -17,7 +17,7 @@
       <div>
         <div class="fill_natural-card">
           <MyCard :card="card2" />
-          <p>企业注册资本：<span>200万元</span></p>
+          <p>企业注册资本：<span>{{parseInt(card1.fund) * 2 + card2.fund}}万元</span></p>
         </div>
       </div>
     </div>
@@ -41,7 +41,7 @@
         card2: {
           type: 'company',
           header: '北京乐海丰田科技发展有限公司',
-          fund: '100万元',
+          fund: '',
           info: false
         },
         btnType: {

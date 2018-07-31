@@ -8,11 +8,11 @@
             <Button :type="item.status">{{ item.statusText }}</Button>
           </div>
           <div class="show_item-info">
-            <span>业务类型：
-              <em>{{item.type}}</em>
+            <span>
+              业务类型：{{item.type}}
             </span>
-            <span>提交时间：
-              <em>{{item.time}}</em>
+            <span>
+              提交时间：{{item.time}}
             </span>
           </div>
         </div>
@@ -25,8 +25,7 @@
   export default {
     data() {
       return {
-        items: [
-          {
+        items: [{
             title: '北京顾信丰科贸易有限公司',
             time: '2017年7月8日',
             type: '普通设立',
@@ -62,7 +61,7 @@
 </script>
 
 <style lang="scss" scoped>
-.show {
+  .show {
     height: 100%;
     background: #f3f3f3;
     li {
@@ -95,4 +94,5 @@
       }
     }
   }
+
 </style>

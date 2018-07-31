@@ -201,6 +201,9 @@
       .ivu-form-item-content {
         line-height: inherit;
         padding-left: 1.1rem;
+        input {
+          transform: translateX(-130%);
+        }
       }
     }
     &_box {

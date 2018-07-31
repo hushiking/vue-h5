@@ -51,6 +51,11 @@ export default {
     display: flex;
     justify-content: space-between;
     line-height: 1;
+    >div {
+      &:last-child {
+        font-size: 0.5rem;
+      }
+    }
     &-fund {
       color: #f86034;
     }
