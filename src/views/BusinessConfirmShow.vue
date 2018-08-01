@@ -8,11 +8,11 @@
             <Button :type="item.isConfirm ? 'success' : 'error'">{{ item.isConfirm ? '已确认' : '待确认' }}</Button>
           </div>
           <div class="show_item-info">
-            <span>业务类型：
-              <em>{{item.type}}</em>
+            <span>
+              业务类型：{{item.type}}
             </span>
-            <span>提交时间：
-              <em>{{item.time}}</em>
+            <span>
+              提交时间：{{item.time}}
             </span>
           </div>
         </div>

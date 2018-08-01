@@ -9,10 +9,10 @@
 
 <script>
   export default {
-    props: ['placeholder', 'searchValue'],
+    props: ['placeholder', 'value'],
     data() {
       return {
-        model13: this.searchValue || '',
+        // model13: this.value,
         loading1: false,
         options1: [],
         list: ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
@@ -23,6 +23,16 @@
           'South dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West virginia',
           'Wisconsin', 'Wyoming'
         ]
+      }
+    },
+    computed: {
+      model13: {
+        get() {
+          return this.value
+        },
+        set(newValue) {
+          this.$emit('setValue', newValue)
+        }
       }
     },
     methods: {

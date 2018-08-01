@@ -9,5 +9,6 @@
   <Icon type="chevron-down"></Icon>
   <Icon type="plus"></Icon>
   <Checkbox>Checkbox</Checkbox>
+  <div style="font-size: 36px;">404页面</div>
 </Collapse>
 </template>

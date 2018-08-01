@@ -43,8 +43,9 @@
       </div>
     </div>
     <MyBottom :btn-type="btnType" :btn-text="btnText" />
-    <Modal v-model="modal1" class="modal_modal">
+    <Modal v-model="modal1" class="modal_modal" :closable="false">
       <div slot="header">
+        <img src="../assets/img/ico-close.png" alt="" @click="hide">
         <p>后置许可经营用语</p>
         <span>登记完成后还需去其他机关办理许可地登记</span>
       </div>
@@ -140,6 +141,9 @@
         } else {
           this.options2 = []
         }
+      },
+      hide() {
+        this.modal1 = false
       }
     },
     components: {
@@ -296,6 +300,13 @@
       .ivu-modal {
         margin: 0;
         &-header {
+          img {
+            position: absolute;
+            width: 1rem;
+            right: 0;
+            top: 0;
+            transform: translate3d(45%, -45%, 0);
+          }
           p {
             font-size: 0.57rem;
           }
@@ -312,27 +323,26 @@
         &-body {
           font-size: 0.5rem;
           padding-bottom: 0;
-        }
-        &-close {
-          top: -0.5rem;
-          right: -0.5rem;
-          .ivu-icon-ios-close-empty {
-            width: 0.9rem;
-            height: 1rem;
-            border-radius: 50%;
-            background: #fff;
-            color: #00b3ff;
-            border-radius: 50%;
-            &::before {
-              font-size: 1rem;
-              content: "\F128";
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate3d(-50%, -50%, 0);
-            }
-          }
-        }
+        } // &-close {
+        //   top: -0.5rem;
+        //   right: -0.5rem;
+        //   .ivu-icon-ios-close-empty {
+        //     width: 0.9rem;
+        //     height: 1rem;
+        //     border-radius: 50%;
+        //     background: #fff;
+        //     color: #00b3ff;
+        //     border-radius: 50%;
+        //     &::before {
+        //       font-size: 1rem;
+        //       content: "\F128";
+        //       position: absolute;
+        //       top: 50%;
+        //       left: 50%;
+        //       transform: translate3d(-50%, -50%, 0);
+        //     }
+        //   }
+        // }
         &-footer {
           border-top: none;
           padding-top: 0;

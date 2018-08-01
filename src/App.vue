@@ -13,6 +13,7 @@ export default {
 <style lang="scss">
 body {
   font-size: 0.57rem;
+  color: #333;
   #app {
     height: 100%;
   }

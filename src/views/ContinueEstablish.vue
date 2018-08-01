@@ -2,7 +2,7 @@
   <div class="continue">
     <ul>
       <li v-for="(item, index) in items" :key="index">
-        <router-link to="" class="continue_apply">继续
+        <router-link :to="{ name: 'company_baseinfo' }" class="continue_apply">继续
           <br/>办理</router-link>
         <div class="continue_item">
           <div class="continue_item-title">{{item.title}}</div>

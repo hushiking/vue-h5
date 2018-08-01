@@ -71,17 +71,7 @@
   export default {
     data() {
       return {
-        formInline: {
-          number: '',
-          id: ''
-        }
-      }
-    },
-    methods: {
-      handleSubmit(name) {
-        this.$router.push({
-          name: 'company'
-        })
+
       }
     }
   }

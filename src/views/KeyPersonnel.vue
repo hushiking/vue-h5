@@ -5,7 +5,7 @@
       <Row>董事</Row>
       <FormItem>
         <div class="personnel_tip">(公司根据情况选择是否成立董事会)</div>
-        <RadioGroup v-model="value1" vertical>
+        <RadioGroup v-model="formItem.value1" vertical>
           <Radio label="不设立董事会"></Radio>
           <Radio label="设立董事会">
             <div class="personnel_radio">
@@ -18,7 +18,7 @@
       <Row>监事</Row>
       <FormItem>
         <div class="personnel_tip">(公司需根据情况选择是否成立监事会；监事，必须为董事长(执行董事)、董事、经理、财务之外的人员)</div>
-        <RadioGroup v-model="value2" vertical>
+        <RadioGroup v-model="formItem.value2" vertical>
           <Radio label="不设立监事会，监事1-2人"></Radio>
           <Radio label="设立监事会">
             <div class="personnel_radio">
@@ -39,8 +39,10 @@
   export default {
     data() {
       return {
-        value1: '设立董事会',
-        value2: '不设立监事会，监事1-2人',
+        formItem: {
+          value1: '设立董事会',
+          value2: '不设立监事会，监事1-2人'
+        },
         btnType: {
           type1: 'warning',
           type2: 'primary'

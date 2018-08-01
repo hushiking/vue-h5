@@ -5,41 +5,41 @@
       <Row>企业联系人</Row>
       <Form class="contact_company" label-position="left" :label-width="100">
         <FormItem label="姓名">
-          <Input type="text" placeholder="请输入姓名"></Input>
+          <Input v-model="formItem.value1" type="text" placeholder="请输入姓名"></Input>
         </FormItem>
         <FormItem label="证件类型" class="contact_company-select">
-          <Select v-model="val">
+          <Select v-model="formItem.select1">
             <Option value="shenfenzheng">身份证</Option>
             <Option value="xueshengzheng">学生证</Option>
             <Option value="junrenzheng">军人证</Option>
           </Select>
         </FormItem>
         <FormItem label="证件号码">
-          <Input type="text" placeholder="请输入证件号码"></Input>
+          <Input v-model="formItem.value2" type="text" placeholder="请输入证件号码"></Input>
         </FormItem>
         <FormItem label="移动电话">
-          <Input type="text" placeholder="请输入移动电话"></Input>
+          <Input v-model="formItem.value3" type="text" placeholder="请输入移动电话"></Input>
         </FormItem>
         <FormItem label="固定电话">
-          <Input type="text" placeholder="请输入固定电话"></Input>
+          <Input v-model="formItem.value4" type="text" placeholder="请输入固定电话"></Input>
         </FormItem>
         <div class="contact_space"></div>
         <Row>财务负责人</Row>
         <FormItem label="姓名">
-          <Input type="text" placeholder="请输入姓名"></Input>
+          <Input v-model="formItem.value5" type="text" placeholder="请输入姓名"></Input>
         </FormItem>
         <FormItem label="证件类型" class="contact_company-select">
-          <Select v-model="val2">
+          <Select v-model="formItem.select2">
             <Option value="shenfenzheng">身份证</Option>
             <Option value="xueshengzheng">学生证</Option>
             <Option value="junrenzheng">军人证</Option>
           </Select>
         </FormItem>
         <FormItem label="证件号码">
-          <Input type="text" placeholder="请输入证件号码"></Input>
+          <Input v-model="formItem.value6" type="text" placeholder="请输入证件号码"></Input>
         </FormItem>
         <FormItem label="移动电话">
-          <Input type="text" placeholder="请输入移动电话"></Input>
+          <Input v-model="formItem.value7" type="text" placeholder="请输入移动电话"></Input>
         </FormItem>
       </Form>
     </div>
@@ -53,8 +53,17 @@
   export default {
     data() {
       return {
-        val: 'shenfenzheng',
-        val2: 'junrenzheng',
+        formItem: {
+          value1: '',
+          value2: '',
+          value3: '',
+          value4: '',
+          value5: '',
+          value6: '',
+          value7: '',
+          select1: '',
+          select2: ''
+        },
         btnType: {
           type1: 'warning',
           type2: 'primary'
@@ -127,15 +136,21 @@
     &_company {
       &-select {
         .ivu-form-item-content {
-          width: 2.86rem;
-          height: 1.75rem;
           float: right;
-          line-height: 1.75rem;
           text-align: right;
           .ivu-select-selection {
             border: none;
             box-shadow: none;
+            height: 100%;
             .ivu-select-selected-value {
+              height: 1.75rem;
+              line-height: 1.75rem;
+              font-size: 0.57rem;
+              padding-left: 0;
+            }
+            .ivu-select-placeholder {
+              height: 1.75rem;
+              line-height: 1.75rem;
               font-size: 0.57rem;
               padding-left: 0;
             }

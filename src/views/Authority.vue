@@ -3,7 +3,7 @@
     <div class="authority_content">
       <img src="../assets/img/ico-tanhao.png">
       <p>该功能需要权限认证，请先登录然后再进行业务办理。</p>
-      <Button type="primary" size="large">登录</Button>
+      <Button type="primary" size="large" @click="go">登录</Button>
     </div>
   </div>
 </template>
@@ -12,16 +12,13 @@
 export default {
   data() {
     return {
-      formInline: {
-        number: '',
-        id: ''
-      }
+
     }
   },
   methods: {
-    handleSubmit(name) {
+    go() {
       this.$router.push({
-        name: 'company'
+        name: 'login'
       })
     }
   }

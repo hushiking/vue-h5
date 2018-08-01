@@ -3,48 +3,48 @@
     <MyHeader />
     <Form class="baseinfo_form" label-position="left">
       <FormItem label="营业期限" :label-width="150">
-        <Input type="text" placeholder="年"></Input>
+        <Input v-model="formItem.value1" type="text" placeholder="年"></Input>
       </FormItem>
       <FormItem label="北京市 丰台区" :label-width="150">
-        <Input type="text" placeholder="住所（经营场所）"></Input>
+        <Input v-model="formItem.value2" type="text" placeholder="住所(经营场所)"></Input>
       </FormItem>
       <FormItem label="北京市 丰台区" :label-width="150">
-        <Input type="text" placeholder="生产经营地"></Input>
+        <Input v-model="formItem.value3" type="text" placeholder="生产经营地"></Input>
       </FormItem>
       <div class="baseinfo_space"></div>
       <FormItem label="住所（产权人）" :label-width="150">
-        <Input type="text" placeholder=""></Input>
+        <Input v-model="formItem.value4" type="text" placeholder=""></Input>
       </FormItem>
       <FormItem class="baseinfo_select">
-        <Select v-model="val">
+        <Select v-model="formItem.select1" placeholder="请选择住宿产权类型">
           <Option value="shenfenzheng">请选择住宿产权类型</Option>
           <Option value="xueshengzheng">学生证</Option>
           <Option value="junrenzheng">军人证</Option>
         </Select>
       </FormItem>
       <FormItem class="baseinfo_select">
-        <Select v-model="val1">
+        <Select v-model="formItem.select2" placeholder="请选择住所提供方式">
           <Option value="shenfenzheng">请选择住所提供方式</Option>
           <Option value="xueshengzheng">学生证</Option>
           <Option value="junrenzheng">军人证</Option>
         </Select>
       </FormItem>
       <FormItem label="营业面积" :label-width="150">
-        <Input type="text" placeholder="平方米"></Input>
+        <Input v-model="formItem.value5" type="text" placeholder="平方米"></Input>
       </FormItem>
       <div class="baseinfo_space"></div>
       <FormItem label="住房使用期限" :label-width="150">
-        <Input type="text" placeholder="年"></Input>
+        <Input v-model="formItem.value6" type="text" placeholder="年"></Input>
       </FormItem>
       <FormItem class="baseinfo_select">
-        <Select v-model="val2">
+        <Select v-model="formItem.select3" placeholder="请选择房屋用途">
           <Option value="shenfenzheng">请选择房屋用途</Option>
           <Option value="xueshengzheng">学生证</Option>
           <Option value="junrenzheng">军人证</Option>
         </Select>
       </FormItem>
       <FormItem label="执照副本数" :label-width="150">
-        <Input type="text" placeholder="份"></Input>
+        <Input v-model="formItem.value7" type="text" placeholder="份"></Input>
       </FormItem>
     </Form>
     <div class="baseinfo_bottom">
@@ -59,9 +59,18 @@
   export default {
     data() {
       return {
-        val: 'shenfenzheng',
-        val1: 'shenfenzheng',
-        val2: 'shenfenzheng',
+        formItem: {
+          value1: '',
+          value2: '',
+          value3: '',
+          value4: '',
+          value5: '',
+          value6: '',
+          value7: '',
+          select1: '',
+          select2: '',
+          select3: ''
+        },
         btnType: {
           type1: 'warning',
           type2: 'primary'
@@ -125,13 +134,20 @@
     }
     &_select {
       .ivu-form-item-content {
-        height: 1.75rem;
-        line-height: 1.75rem;
         padding-left: 0.54rem;
         .ivu-select-selection {
           border: none;
           box-shadow: none;
+          height: 100%;
           .ivu-select-selected-value {
+            height: 1.75rem;
+            line-height: 1.75rem;
+            font-size: 0.57rem;
+            padding-left: 0;
+          }
+          .ivu-select-placeholder {
+            height: 1.75rem;
+            line-height: 1.75rem;
             font-size: 0.57rem;
             padding-left: 0;
           }

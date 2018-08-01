@@ -36,11 +36,9 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-  body {
-    padding: 0;
-    background: #f3f3f3;
-  }
   .notself {
+    height: 100%;
+    background: #f3f3f3;
     .ivu-form-item {
       margin: 0;
     }

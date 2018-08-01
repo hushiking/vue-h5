@@ -7,28 +7,28 @@
       <div class="completed_badge">
         <div>
           <div>
-            <MyCheckBox v-model="checked" /> 法定名称章
+            <MyCheckBox v-model="formItem.checked1" /> 法定名称章
           </div>
           <div>
-            <MyCheckBox /> 财务专用章
+            <MyCheckBox v-model="formItem.checked2" /> 财务专用章
           </div>
         </div>
         <div>
           <div>
-            <MyCheckBox /> 合同专用章
+            <MyCheckBox v-model="formItem.checked3" /> 合同专用章
           </div>
           <div>
-            <MyCheckBox /> 发票专用章
+            <MyCheckBox v-model="formItem.checked4" /> 发票专用章
           </div>
         </div>
       </div>
     </div>
     <div class="completed_space"></div>
     <div class="completed_company">
-      <MySearch :placeholder="placeholder"></MySearch>
+      <MySearch v-model="searchValue" @setValue="modifyValue" :placeholder="placeholder"></MySearch>
       <div class="completed_company-items">
         <div>
-          <MyCheckBox />
+          <MyCheckBox v-model="formItem.checked5" />
           <div>
             <p>刻章企业名称：北京丰台XX刻字社</p>
             <p>刻章企业地址：丰台区XX路103号地下101室</p>
@@ -36,7 +36,7 @@
           </div>
         </div>
         <div>
-          <MyCheckBox />
+          <MyCheckBox v-model="formItem.checked6" />
           <div>
             <p>刻章企业名称：北京丰台XX刻字社</p>
             <p>刻章企业地址：丰台区XX路103号地下101室</p>
@@ -53,7 +53,7 @@
       </div>
     </div>
     <div class="completed_btn">
-      <Button type="primary">完成</Button>
+      <Button type="primary" @click="close">完成</Button>
     </div>
   </div>
 </template>
@@ -64,9 +64,16 @@
   export default {
     data() {
       return {
+        formItem: {
+          checked1: true,
+          checked2: true,
+          checked3: false,
+          checked4: false,
+          checked5: false,
+          checked6: true
+        },
+        searchValue: '资源',
         placeholder: '请输入刻章企业名称',
-        checked: true,
-        model13: '',
         loading1: false,
         options1: [],
         list: ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
@@ -96,6 +103,12 @@
         } else {
           this.options1 = []
         }
+      },
+      close() {
+        this.$router.push({ name: 'my_business' })
+      },
+      modifyValue(value) {
+        this.searchValue = value
       }
     },
     components: {

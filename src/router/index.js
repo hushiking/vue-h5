@@ -39,7 +39,8 @@ import FileUpload from '@/views/FileUpload'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  // 设置history表示不使用带hash的url路径
+  // mode: 'history',
   scrollBehavior: () => ({
     y: 0
   }),
@@ -68,7 +69,7 @@ export default new Router({
       component: ProposedNotself
     },
     {
-      path: '/my_business',
+      path: '/menu',
       meta: {
         title: '我的业务'
       },
@@ -237,7 +238,7 @@ export default new Router({
       component: ProcessList
     },
     {
-      path: '/business_confirm',
+      path: '/confirm',
       meta: {
         title: '业务确认'
       },
@@ -245,7 +246,7 @@ export default new Router({
       component: BusinessConfirm
     },
     {
-      path: '/business_confirm_show',
+      path: '/confirm_show',
       meta: {
         title: '业务确认'
       },
@@ -253,7 +254,7 @@ export default new Router({
       component: BusinessConfirmShow
     },
     {
-      path: '/business_confirm_process',
+      path: '/confirm_process',
       meta: {
         title: '业务确认'
       },

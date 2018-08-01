@@ -164,7 +164,6 @@
         margin-top: 1.1rem;
         text-align: center;
         input {
-          position: relative;
           left: 1.35rem;
           top: 50%;
           transform: translateY(-50%)

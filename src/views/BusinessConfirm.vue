@@ -3,11 +3,11 @@
     <div class="confirm_item">
       <div class="confirm_item-title">{{item.title}}</div>
       <div class="confirm_item-info">
-        <span>业务类型：
-          <em>{{item.type}}</em>
+        <span>
+          业务类型：{{item.type}}
         </span>
-        <span>提交时间：
-          <em>{{item.time}}</em>
+        <span>
+          提交时间：{{item.time}}
         </span>
       </div>
       <Input type="textarea" v-model="value" placeholder="请填写退回原因" :rows="8"></Input>

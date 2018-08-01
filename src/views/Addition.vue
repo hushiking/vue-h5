@@ -10,73 +10,65 @@
         </RadioGroup>
       </FormItem>
       <FormItem class="addition_check">
-        <MyCheckBox /> 总投资人为上年度世界500强企业
+        <MyCheckBox v-model="formItem.checkbox" />总投资人为上年度世界500强企业
       </FormItem>
       <FormItem class="addition_box" label="投资人是否有中央单位">
-        <i-Switch v-model="formItem.switch1" @on-change="change"></i-Switch>
+        <i-Switch v-model="formItem.switch1" @on-change="change1"></i-Switch>
         <CheckboxGroup v-model="formItem.central">
-          <Checkbox label="中央企业"></Checkbox>
-          <Checkbox label="中央在京事"></Checkbox>
+          <Checkbox label="中央企业" :disabled="formItem.disabled1"></Checkbox>
+          <Checkbox label="中央在京事" :disabled="formItem.disabled1"></Checkbox>
           <br>
-          <Checkbox label="驻京部队"></Checkbox>
-          <Checkbox label="其他"></Checkbox>
+          <Checkbox label="驻京部队" :disabled="formItem.disabled1"></Checkbox>
+          <Checkbox label="其他" :disabled="formItem.disabled1"></Checkbox>
         </CheckboxGroup>
       </FormItem>
       <FormItem class="addition_switch" label="法定代表人（负责人、执行合伙事务人、投资人）是否党员" :label-width="240">
-        <i-Switch v-model="formItem.switch2" @on-change="change"></i-Switch>
+        <i-Switch v-model="formItem.switch2"></i-Switch>
       </FormItem>
       <div class="addition_space"></div>
       <FormItem class="addition_box" label="建立党组织">
-        <i-Switch v-model="formItem.switch1" @on-change="change"></i-Switch>
-        <Select v-model="formItem.party" placeholder="请选择党组织建制">
+        <i-Switch v-model="formItem.switch3" @on-change="change3"></i-Switch>
+        <Select v-model="formItem.party1" :disabled="formItem.disabled3" placeholder="请选择党组织建制">
           <Option value="beijing">New York</Option>
           <Option value="shanghai">London</Option>
           <Option value="shenzhen">Sydney</Option>
         </Select>
-        <Select v-model="formItem.party" placeholder="请选择党组织组建方式">
+        <Select v-model="formItem.party2" :disabled="formItem.disabled3" placeholder="请选择党组织组建方式">
           <Option value="beijing">New York</Option>
           <Option value="shanghai">London</Option>
           <Option value="shenzhen">Sydney</Option>
         </Select>
       </FormItem>
       <FormItem class="addition_box" label="党组织是否本年度组件">
-        <i-Switch v-model="formItem.switch1" @on-change="change"></i-Switch>
+        <i-Switch v-model="formItem.switch4"></i-Switch>
       </FormItem>
       <FormItem class="addition_switch" label="法定代表人（负责人、执行合伙事务人、投资人、经营者）是否党书记" :label-width="240">
-        <i-Switch v-model="formItem.switch2" @on-change="change"></i-Switch>
+        <i-Switch v-model="formItem.switch5"></i-Switch>
       </FormItem>
       <div class="addition_space"></div>
       <FormItem class="addition_box" label="建立团组织">
-        <i-Switch v-model="formItem.switch1" @on-change="change"></i-Switch>
-        <Select v-model="formItem.party" placeholder="请输入团员人数">
-          <Option value="beijing">New York</Option>
-          <Option value="shanghai">London</Option>
-          <Option value="shenzhen">Sydney</Option>
-        </Select>
+        <i-Switch v-model="formItem.switch6" @on-change="change6"></i-Switch>
+        <Input v-model="formItem.value1" placeholder="请输入团员人数" :disabled="formItem.disabled6" class="addition_box-input"></Input>
       </FormItem>
       <FormItem class="addition_box" label="建立工会组织">
-        <i-Switch v-model="formItem.switch1" @on-change="change"></i-Switch>
-        <Select v-model="formItem.party" placeholder="请输入工会人数">
-          <Option value="beijing">New York</Option>
-          <Option value="shanghai">London</Option>
-          <Option value="shenzhen">Sydney</Option>
-        </Select>
+        <i-Switch v-model="formItem.switch7" @on-change="change7"></i-Switch>
+        <Input v-model="formItem.value2" placeholder="请输入工会人数" :disabled="formItem.disabled7" class="addition_box-input"></Input>
       </FormItem>
-      <FormItem label="从业人数" :label-width="100">
+      <FormItem label="从业人数" :label-width="100" class="addition_input">
         <Input type="text" placeholder="请输入从业人数"></Input>
       </FormItem>
-      <FormItem label="其中本市人数" :label-width="120">
+      <FormItem label="其中本市人数" :label-width="120" class="addition_input">
         <Input type="text" placeholder="请输入本市人数"></Input>
       </FormItem>
-      <FormItem label="其中外地人数" :label-width="120">
+      <FormItem label="其中外地人数" :label-width="120" class="addition_input">
         <Input type="text" placeholder="请输入外地人数"></Input>
       </FormItem>
       <div class="addition_space"></div>
       <FormItem class="addition_box addition_line" label="投资人中是否有本年度应届高校毕业生">
-        <i-Switch v-model="formItem.switch1" @on-change="change"></i-Switch>
+        <i-Switch v-model="formItem.switch8"></i-Switch>
       </FormItem>
       <FormItem class="addition_box" label="该毕业生是否为在京生源">
-        <i-Switch v-model="formItem.switch1" @on-change="change"></i-Switch>
+        <i-Switch v-model="formItem.switch9"></i-Switch>
       </FormItem>
     </Form>
     <MyBottom :btn-type="btnType" :btn-text="btnText" />
@@ -91,11 +83,24 @@
     data() {
       return {
         formItem: {
-          type: '',
-          switch1: '',
+          type: 'type1',
+          checkbox: false,
+          switch1: false,
+          disabled1: true,
           central: [],
-          switch2: '',
-          party: ''
+          switch2: false,
+          switch3: false,
+          disabled3: true,
+          party1: '',
+          party2: '',
+          switch4: true,
+          switch5: true,
+          switch6: true,
+          disabled6: false,
+          switch7: false,
+          disabled7: true,
+          switch8: true,
+          switch9: false
         },
         btnType: {
           type1: 'warning',
@@ -110,6 +115,34 @@
     methods: {
       change() {
 
+      },
+      change1(status) {
+        if (status) {
+          this.formItem.disabled1 = false
+        } else {
+          this.formItem.disabled1 = true
+        }
+      },
+      change3(status) {
+        if (status) {
+          this.formItem.disabled3 = false
+        } else {
+          this.formItem.disabled3 = true
+        }
+      },
+      change6(status) {
+        if (status) {
+          this.formItem.disabled6 = false
+        } else {
+          this.formItem.disabled6 = true
+        }
+      },
+      change7(status) {
+        if (status) {
+          this.formItem.disabled7 = false
+        } else {
+          this.formItem.disabled7 = true
+        }
       }
     },
     components: {
@@ -141,9 +174,17 @@
       }
       &-content {
         font-size: 0.57rem;
+        line-height: 1.5rem;
+        .ivu-checkbox-group {
+          .ivu-checkbox-wrapper {
+            line-height: 1;
+          }
+        }
       }
+    }
+    &_input {
       input {
-        height: 1.75rem;
+        height: 1.5rem;
         font-size: 0.57rem;
         border: none;
         border-radius: 0;
@@ -172,26 +213,26 @@
       justify-content: space-between;
       .ivu-radio {
         margin-right: 1.1rem;
-        .ivu-radio-inner {
+        &-inner {
           display: none;
         }
-        .ivu-radio-input {
+        &-input {
           top: -0.55rem;
           border: none;
           outline: none;
           opacity: 1;
           -webkit-appearance: none;
-        }
-        .ivu-radio-input:before {
-          color: #aaa;
-          content: "\F401";
-          font-family: Ionicons;
-          font-size: 1rem;
-          -webkit-font-smoothing: antialiased;
-        }
-        .ivu-radio-input:checked:before {
-          color: #00b3ff;
-          content: "\F3FF";
+          &:before {
+            color: #aaa;
+            content: "\F401";
+            font-family: Ionicons;
+            font-size: 1rem;
+            -webkit-font-smoothing: antialiased;
+          }
+          &:checked:before {
+            color: #00b3ff;
+            content: "\F3FF";
+          }
         }
       }
     }
@@ -214,7 +255,31 @@
           margin-top: -1.25rem;
         }
         .ivu-select {
+          margin-bottom: 0.36rem;
+          &-selection {
+            height: 1.5rem;
+          }
+          &-placeholder {
+            height: 1.5rem;
+            line-height: 1.5rem;
+            font-size: 0.5rem;
+          }
+        }
+      }
+      &-input {
+        input {
+          height: 1.5rem;
+          line-height: 1.5rem;
           margin-bottom: 0.32rem;
+          &::-webkit-input-placeholder {
+            font-size: 0.5rem;
+          }
+          &::-moz-placeholder {
+            font-size: 0.5rem;
+          }
+          &:-ms-input-placeholder {
+            font-size: 0.5rem;
+          }
         }
       }
     }

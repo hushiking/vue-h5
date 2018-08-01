@@ -15,7 +15,7 @@
           <i class="ivu-icon"></i>
         </div>
         <div>
-          <i class="ivu-icon"></i>
+          <img src="../assets/img/ico-add.png" alt="">
         </div>
       </div>
       <Row>经理
@@ -23,7 +23,7 @@
       </Row>
       <div class="add_items clearfix">
         <div>
-          <i class="ivu-icon"></i>
+          <img src="../assets/img/ico-add.png" alt="">
         </div>
       </div>
       <Row>监事</Row>
@@ -39,14 +39,14 @@
           <i class="ivu-icon"></i>
         </div>
         <div>
-          <i class="ivu-icon"></i>
+          <img src="../assets/img/ico-add.png" alt="">
         </div>
       </div>
       <Row>法定代表人
         <span>(只能由担任执行董事，经理的人担任)</span>
       </Row>
       <FormItem class="add_box">
-        <Select v-model="formItem.party" placeholder="请选择出资方式">
+        <Select v-model="formItem.fund" placeholder="请选择出资方式">
           <Option value="beijing">New York</Option>
           <Option value="shanghai">London</Option>
           <Option value="shenzhen">Sydney</Option>
@@ -64,7 +64,7 @@
     data() {
       return {
         formItem: {
-          party: ''
+          fund: ''
         },
         btnType: {
           type1: 'warning',
@@ -132,23 +132,28 @@
         border-radius: 5px;
         &:last-child {
           border: 1px solid #ccc;
-          i {
+          img {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate3d(-50%, -50%, 0);
-            &::before {
-              font-size: 1rem;
-              color: #ccc;
-              content: "\F218";
-            }
+            width: 1rem;
           }
         }
       }
     }
     &_box {
-      padding: 0.54rem;
+      padding: 0.54rem 0.54rem 0;
       margin-bottom: 0;
+      .ivu-select-selection {
+        height: 1.75rem;
+        line-height: 1.75rem;
+        .ivu-select-placeholder {
+          height: 1.75rem;
+          line-height: 1.75rem;
+          font-size: 0.5rem;
+        }
+      }
     }
   }
 
