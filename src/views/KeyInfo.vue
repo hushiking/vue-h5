@@ -56,7 +56,7 @@
       </FormItem>
     </Form>
     <div class="keyinfo_bottom">
-      <Button type="primary">保存</Button>
+      <Button type="primary" @click="go">保存</Button>
     </div>
   </div>
 </template>
@@ -85,6 +85,11 @@
           text1: '保存',
           text2: '下一步'
         }
+      }
+    },
+    methods: {
+      go() {
+        this.$router.push({ name: 'key_personnel_add' })
       }
     },
     components: {

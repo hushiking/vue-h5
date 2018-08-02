@@ -14,15 +14,15 @@
           <p>董事成员</p>
           <i class="ivu-icon"></i>
         </div>
-        <div>
+        <div @click="go">
           <img src="../assets/img/ico-add.png" alt="">
         </div>
       </div>
-      <Row>经理
-        <span>(仅为一人，可由董事长执，行董事，董事兼任)</span>
+      <Row>
+        经理<span>(仅为一人，可由董事长，执行董事，董事兼任)</span>
       </Row>
       <div class="add_items clearfix">
-        <div>
+        <div @click="go">
           <img src="../assets/img/ico-add.png" alt="">
         </div>
       </div>
@@ -38,12 +38,12 @@
           <p>监事成员</p>
           <i class="ivu-icon"></i>
         </div>
-        <div>
+        <div @click="go">
           <img src="../assets/img/ico-add.png" alt="">
         </div>
       </div>
-      <Row>法定代表人
-        <span>(只能由担任执行董事，经理的人担任)</span>
+      <Row>
+        法定代表人<span>(只能由担任执行董事，经理的人担任)</span>
       </Row>
       <FormItem class="add_box">
         <Select v-model="formItem.fund" placeholder="请选择出资方式">
@@ -76,6 +76,11 @@
         }
       }
     },
+    methods: {
+      go() {
+        this.$router.push({ name: 'key_info' })
+      }
+    },
     components: {
       MyHeader,
       MyBottom
@@ -92,6 +97,7 @@
         height: 1.75rem;
         line-height: 1.75rem;
         background: #f3f3f3;
+        overflow: hidden;
         span {
           font-size: 0.43rem;
           color: #aaa;
@@ -99,7 +105,7 @@
       }
     }
     &_items {
-      padding: 0.54rem;
+      padding: 0.54rem 0.54rem 0;
       &-person {
         padding: 0.36rem;
         border: 1px solid #569c17;
@@ -125,13 +131,13 @@
       }
       >div {
         position: relative;
-        width: 27%;
+        width: 29%;
         height: 2.3rem;
         float: left;
-        margin: 0 3%;
+        margin: 0 2.1% 0.54rem;
         border-radius: 5px;
         &:last-child {
-          border: 1px solid #ccc;
+          border: 1px solid #dddee1;
           img {
             position: absolute;
             top: 50%;
