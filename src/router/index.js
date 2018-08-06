@@ -14,8 +14,10 @@ import MyBusiness from '@/views/MyBusiness'
 // import MyCheckBox from '@/components/MyCheckBox'
 // import MyBottom from '@/components/MyBottom'
 // import MyRadio from '@/components/MyRadio'
-import MyCollapse from '@/components/MyCollapse'
+// import MyCollapse from '@/components/MyCollapse'
 // import MyCard from '@/components/MyCard'
+// import MyIdCard from '@/components/MyIdCard'
+import MyFileUpload from '@/components/MyFileUpload'
 import Record from '@/views/Record'
 import RecordCompleted from '@/views/RecordCompleted'
 import Contact from '@/views/Contact'
@@ -35,6 +37,7 @@ import KeyPersonnel from '@/views/KeyPersonnel'
 import KeyPersonnelAdd from '@/views/KeyPersonnelAdd'
 import KeyInfo from '@/views/KeyInfo'
 import FileUpload from '@/views/FileUpload'
+import Test from '@/views/Test'
 
 Vue.use(Router)
 
@@ -278,12 +281,20 @@ export default new Router({
       component: Authority
     },
     {
+      path: '/test',
+      meta: {
+        title: '上传图片测试'
+      },
+      name: 'test',
+      component: Test
+    },
+    {
       path: '*',
       meta: {
         title: '其他'
       },
       name: 'any',
-      component: MyCollapse
+      component: MyFileUpload
     }
   ]
 })

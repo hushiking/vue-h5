@@ -2,7 +2,7 @@
   <div class="establish">
     <ul>
       <li v-for="(item, index) in items" :key="index">
-        <router-link to="" class="establish_apply">进入
+        <router-link :to="{ name: 'my_business' }" class="establish_apply">进入
           <br/>办理</router-link>
         <div class="establish_item">
           <div class="establish_item-title">{{item.title}}</div>

@@ -2,30 +2,24 @@
   <div class="upload">
     <MyHeader />
     <Collapse v-model="value1">
-      <Panel name="1">
+      <Panel name="1" class="upload_panel">
         主要人员身份证照片
         <span>*</span>
-        <p slot="content">史蒂夫·乔布斯（Steve Jobs），1955年2月24日生于美国加利福尼亚州旧金山，美国发明家、企业家、美国苹果公司联合创办人。</p>
-      </Panel>
-      <Panel name="2">
-        住所使用证明
-        <span>*</span>
-        <p slot="content">斯蒂夫·盖瑞·沃兹尼亚克（Stephen Gary Wozniak），美国电脑工程师，曾与史蒂夫·乔布斯合伙创立苹果电脑（今之苹果公司）。斯蒂夫·盖瑞·沃兹尼亚克曾就读于美国科罗拉多大学，后转学入美国著名高等学府加州大学伯克利分校（UC
-          Berkeley）并获得电机工程及计算机（EECS）本科学位（1987年）。
+        <p slot="content" v-for="(item, index) in myid" :key="index">
+          <MyIdCard :name="item.name" :passed="item.passed" />
         </p>
       </Panel>
-      <Panel name="3">
+      <Panel name="2" class="upload_panel">
+        住所使用证明
+        <span>*</span>
+        <p slot="content" v-for="(item, index) in myfile" :key="index">
+          <MyFileUpload :multi="item.multi" />
+        </p>
+      </Panel>
+      <Panel name="3" class="upload_panel">
         其他需上传文件(非必传)
         <p slot="content">
-          <strong>
-            <span>烟草</span>制品业</strong>
-          <em style="display: block;text-indent: 1.14rem;">
-            <span>烟草</span>代用品制雪茄烟、
-            <span>烟草</span>代用品制卷烟</em>
-          <strong>其他
-            <span>烟草</span>制品制造</strong>
-          <em style="display: block;text-indent: 1.14rem;">
-            <span>烟草</span>精汁</em>
+          <MyFileUpload :multi="true" />
         </p>
       </Panel>
     </Collapse>
@@ -42,6 +36,8 @@
 <script>
   import MyHeader from '../components/MyHeader.vue'
   import MyBottom from '../components/MyBottom.vue'
+  import MyIdCard from '../components/MyIdCard.vue'
+  import MyFileUpload from '../components/MyFileUpload.vue'
   export default {
     data() {
       return {
@@ -53,12 +49,35 @@
         btnText: {
           text1: '保存',
           text2: '下一步'
-        }
+        },
+        myid: [{
+            name: '吴娜娜',
+            passed: true
+          },
+          {
+            name: '董高超',
+            passed: false
+          },
+          {
+            name: '李小明',
+            passed: false
+          }
+        ],
+        myfile: [{
+          multi: false
+        }, {
+          multi: true
+        }]
       }
+    },
+    methods: {
+
     },
     components: {
       MyHeader,
-      MyBottom
+      MyBottom,
+      MyIdCard,
+      MyFileUpload
     }
   }
 
@@ -70,14 +89,7 @@
     background: #f3f3f3;
     .ivu-collapse {
       border: none;
-      .ivu-collapse-item {
-        padding: 0 0.54rem;
-        margin-bottom: 0.54rem;
-        border-bottom: 1px solid #dddee1;
-        background: #fff;
-        &:last-child {
-          margin-bottom: 0;
-        }
+      &-item {
         .ivu-collapse-header {
           padding-left: 0;
           height: 1.75rem;
@@ -98,12 +110,21 @@
             color: #f86034;
           }
         }
-        .ivu-collapse-content {
-          padding-left: 0;
-          span {
-            color: #f86034;
-          }
+      }
+      &-content {
+        padding: 0;
+        &-box {
+          padding: 0;
         }
+      }
+    }
+    &_panel {
+      padding: 0 0.54rem;
+      margin-bottom: 0.54rem;
+      border-bottom: 1px solid #dddee1;
+      background: #fff;
+      &:last-child {
+        margin-bottom: 0;
       }
     }
     &_tip {
