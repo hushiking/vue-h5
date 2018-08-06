@@ -229,7 +229,9 @@
           outline: none;
           opacity: 1;
           -webkit-appearance: none;
-          background-color: transparent;
+          -moz-appearance: none;
+          appearance: none;
+          background: transparent;
           &:before {
             color: #aaa;
             content: "\F401";
@@ -252,6 +254,7 @@
         padding-left: 1.1rem;
         input {
           transform: translateX(-130%);
+          height: 100%;
         }
       }
     }

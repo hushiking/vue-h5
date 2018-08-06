@@ -29,6 +29,9 @@
     outline: none;
     position: absolute;
     -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
   }
 
   input:before {

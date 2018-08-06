@@ -154,6 +154,7 @@
           line-height: 1.25rem;
           input {
             left: -1rem;
+            height: 100%;
           }
         }
       }
