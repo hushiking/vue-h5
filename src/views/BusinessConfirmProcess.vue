@@ -13,13 +13,32 @@
     <div class="process_know">
       <Button type="primary">知道了</Button>
     </div>
+    <div class="process_bottom">
+      <MyFooter />
+    </div>
   </div>
 </template>
 
-<style lang="scss">
+<script>
+import MyFooter from '../components/MyFooter.vue'
+export default {
+  data() {
+    return {
+
+    }
+  },
+  components: {
+    MyFooter
+  }
+}
+</script>
+
+<style lang="scss" scoped>
   .process {
-    height: 100%;
+    position: relative;
+    min-height: 100%;
     background: #f3f3f3;
+    padding-bottom: 1.75rem;
     &_business {
       padding: 0.54rem;
       background: #fff;
@@ -34,13 +53,13 @@
         margin-bottom: 0.14rem;
       }
       img {
-        width: 12rem;
+        width: 10.5rem;
         margin-top: 0.36rem;
       }
     }
     &_tip {
-      margin-top: 0.54rem;
-      padding: 0 0.54rem;
+      margin: 0.54rem 0;
+      padding: 0.54rem;
       background: #fff;
       &-title {
         @extend .process_business-title
@@ -51,11 +70,16 @@
       }
     }
     &_know {
-      padding: 0.72rem;
       text-align: center;
       button {
         font-size: 0.57rem;
       }
+    }
+    &_bottom {
+      position: absolute;
+      width: 100%;
+      height: 1.75rem;
+      bottom: 0;
     }
   }
 

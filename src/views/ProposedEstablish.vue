@@ -18,6 +18,7 @@
 </template>
 
 <script>
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -36,6 +37,9 @@
           }
         ]
       }
+    },
+    components: {
+      MyFooter
     }
   }
 
@@ -44,7 +48,8 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   .establish {
-    height: 100%;
+    min-height: 100%;
+    padding-bottom: 3rem;
     background: #f3f3f3;
     li {
       margin-bottom: 0.54rem;
@@ -65,8 +70,6 @@
     &_item {
       &-title {
         color: #00b3ff;
-        overflow: hidden;
-        white-space: nowrap;
         border-bottom: 1px solid #eaeaea;
         padding-bottom: 0.22rem;
         margin-bottom: 0.14rem;
@@ -74,8 +77,6 @@
       &-info {
         font-size: 0.43rem;
         color: #7d7d7d;
-        overflow: hidden;
-        white-space: nowrap;
       }
     }
     &_fix {

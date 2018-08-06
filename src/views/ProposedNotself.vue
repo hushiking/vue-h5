@@ -11,10 +11,14 @@
         <Button type="primary" long @click="handleSubmit('formInline')">进入办理</Button>
       </div>
     </Form>
+    <div class="notself_bottom">
+      <MyFooter />
+    </div>
   </div>
 </template>
 
 <script>
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -30,14 +34,20 @@
           name: 'company_baseinfo'
         })
       }
+    },
+    components: {
+      MyFooter
     }
   }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .notself {
-    height: 100%;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 2.25rem;
     background: #f3f3f3;
     .ivu-form-item {
       margin: 0;
@@ -64,5 +74,11 @@
         font-size: 0.57rem;
       }
     }
+    &_bottom {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
   }
+
 </style>

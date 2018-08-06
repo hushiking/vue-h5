@@ -42,7 +42,10 @@
         <p>涉及到许可的项目，请填写许可信息，如果需要修改许可经营范围，可以通过修改【许可经营项目】信息中的【对应许可经营范围】实现已取得前置许可的，您可以根据许可文件批准内容添加许可经营项目。</p>
       </div>
     </div>
-    <MyBottom :btn-type="btnType" :btn-text="btnText" />
+    <div class="lookup_bottom">
+      <MyBottom :btn-type="btnType" :btn-text="btnText" />
+      <MyFooter />
+    </div>
   </div>
 </template>
 
@@ -50,6 +53,7 @@
   import MyHeader from '../components/MyHeader.vue'
   import MySearch from '../components/MySearch.vue'
   import MyBottom from '../components/MyBottom.vue'
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -97,7 +101,8 @@
     components: {
       MyHeader,
       MySearch,
-      MyBottom
+      MyBottom,
+      MyFooter
     }
   }
 
@@ -105,6 +110,9 @@
 
 <style lang="scss">
   .lookup {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 4rem;
     >div {
       &:nth-child(2) {
         padding: 0.57rem;
@@ -242,6 +250,12 @@
         border: 1px solid #7ed321;
         border-radius: 0.2rem;
       }
+    }
+    &_bottom {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 3.5rem;
     }
   }
 

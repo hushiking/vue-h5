@@ -7,7 +7,9 @@
       <div class="process_info">
         <p>业务类型：普通设立</p>
         <p>核准机关：北京市工商行政管理海淀分局</p>
-        <p>业务状态：<span>已提交，待审核</span></p>
+        <p>业务状态：
+          <span>已提交，待审核</span>
+        </p>
       </div>
     </div>
     <div>
@@ -15,8 +17,14 @@
         自然人股东
       </div>
       <div class="process_person">
-        <Button :class="[person1.status]"><span>{{person1.name}}</span><em>{{person1.statusText}}</em></Button>
-        <Button :class="[person2.status]"><span>{{person2.name}}</span><em>{{person2.statusText}}</em></Button>
+        <Button :class="[person1.status]">
+          <span>{{person1.name}}</span>
+          <em>{{person1.statusText}}</em>
+        </Button>
+        <Button :class="[person2.status]">
+          <span>{{person2.name}}</span>
+          <em>{{person2.statusText}}</em>
+        </Button>
       </div>
     </div>
     <div>
@@ -24,13 +32,20 @@
         法定代表人
       </div>
       <div class="process_person">
-        <Button :class="[person3.status]"><span>{{person3.name}}</span><em>{{person3.statusText}}</em></Button>
+        <Button :class="[person3.status]">
+          <span>{{person3.name}}</span>
+          <em>{{person3.statusText}}</em>
+        </Button>
       </div>
+    </div>
+    <div class="process_bottom">
+      <MyFooter />
     </div>
   </div>
 </template>
 
 <script>
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -50,6 +65,9 @@
           statusText: '已通过'
         }
       }
+    },
+    components: {
+      MyFooter
     }
   }
 
@@ -57,10 +75,11 @@
 
 <style lang="scss" scoped>
   .process {
-    height: 100%;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 2.25rem;
     background: #f3f3f3;
     >div {
-      margin-bottom: 0.54rem;
       background: #fff;
       padding: 0.54rem;
     }
@@ -79,7 +98,7 @@
         line-height: 1.75;
       }
       span {
-        color:#cf4553;
+        color: #cf4553;
       }
     }
     &_person {
@@ -104,6 +123,12 @@
       color: #cf4553;
       border: 1px solid#cf4553;
       background: #f1dcde;
+    }
+    &_bottom {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: #f3f3f3 !important;
     }
   }
 

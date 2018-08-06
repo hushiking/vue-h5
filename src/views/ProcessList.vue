@@ -18,10 +18,14 @@
         </div>
       </li>
     </ul>
+    <div class="show_bottom">
+      <MyFooter />
+    </div>
   </div>
 </template>
 
 <script>
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -55,6 +59,9 @@
           }
         ]
       }
+    },
+    components: {
+      MyFooter
     }
   }
 
@@ -62,13 +69,20 @@
 
 <style lang="scss" scoped>
   .show {
-    height: 100%;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 2.25rem;
     background: #f3f3f3;
-    li {
-      margin-bottom: 0.54rem;
-      background: #fff;
-      padding: 0.54rem;
-      overflow: hidden;
+    ul {
+      li {
+        margin-bottom: 0.54rem;
+        background: #fff;
+        padding: 0.54rem;
+        overflow: hidden;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
     }
     &_item {
       background: #fff;
@@ -92,6 +106,11 @@
         white-space: nowrap;
         padding: 0.36rem 0;
       }
+    }
+    &_bottom {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
     }
   }
 

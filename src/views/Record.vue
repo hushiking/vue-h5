@@ -19,12 +19,14 @@
     </div>
     <div class="record_next">
       <Button type="primary" @click="go">下一步</Button>
+      <MyFooter />
     </div>
   </div>
 </template>
 
 <script>
   import MyHeader from '../components/MyHeader.vue'
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -37,7 +39,8 @@
       }
     },
     components: {
-      MyHeader
+      MyHeader,
+      MyFooter
     }
   }
 
@@ -45,6 +48,9 @@
 
 <style lang="scss">
   .record {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 4rem;
     &_tip {
       padding: 0 0.54rem;
       >p {
@@ -61,7 +67,7 @@
       }
     }
     &_qr {
-      // font-size: 0.57rem;
+      padding: 0.54rem 0;
       text-align: center;
       img {
         height: 3.6rem;
@@ -73,7 +79,10 @@
       }
     }
     &_next {
-      padding: 0.72rem 0;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 3.5rem;
       text-align: center;
       button {
         font-size: 0.57rem;

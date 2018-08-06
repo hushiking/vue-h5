@@ -52,7 +52,10 @@
           <Option value="shenzhen">Sydney</Option>
         </Select>
       </FormItem>
-      <MyBottom :btnType="btnType" :btnText="btnText" />
+      <div class="add_bottom">
+        <MyBottom :btnType="btnType" :btnText="btnText" />
+        <MyFooter />
+      </div>
     </Form>
   </div>
 </template>
@@ -60,6 +63,7 @@
 <script>
   import MyHeader from '../components/MyHeader.vue'
   import MyBottom from '../components/MyBottom.vue'
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -83,7 +87,8 @@
     },
     components: {
       MyHeader,
-      MyBottom
+      MyBottom,
+      MyFooter
     }
   }
 
@@ -91,6 +96,9 @@
 
 <style lang="scss">
   .add {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 4rem;
     form {
       .ivu-row {
         padding: 0 0.54rem;
@@ -149,7 +157,7 @@
       }
     }
     &_box {
-      padding: 0.54rem 0.54rem 0;
+      padding: 0.54rem;
       margin-bottom: 0;
       .ivu-select-selection {
         height: 1.75rem;
@@ -160,6 +168,12 @@
           font-size: 0.5rem;
         }
       }
+    }
+    &_bottom {
+      position: absolute;
+      width: 100%;
+      height: 3.5rem;
+      bottom: 0;
     }
   }
 

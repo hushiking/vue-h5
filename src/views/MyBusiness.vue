@@ -100,8 +100,9 @@
         display: block;
         position: relative;
         padding: 0.54rem;
+        height: 100%;
         text-align: center;
-        font-size: 18px;
+        font-size: 0.57rem;
         color: #000;
       }
       &-num {
@@ -112,8 +113,7 @@
       }
       &-icon {
         display: block;
-        height: 3.2rem;
-        margin-bottom: 0.36rem;
+        height: 80%;
       }
       @for $i from 1 through 8 {
         .icon-menu#{$i} {

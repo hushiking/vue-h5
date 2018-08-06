@@ -5,6 +5,7 @@ import ProposedEstablish from '@/views/ProposedEstablish'
 import ContinueEstablish from '@/views/ContinueEstablish'
 import ProposedNotself from '@/views/ProposedNotself'
 import BusinessConfirm from '@/views/BusinessConfirm'
+import BusinessConfirmPhoto from '@/views/BusinessConfirmPhoto'
 import BusinessConfirmShow from '@/views/BusinessConfirmShow'
 import BusinessConfirmProcess from '@/views/BusinessConfirmProcess'
 import Register from '@/views/Register'
@@ -247,6 +248,14 @@ export default new Router({
       },
       name: 'business_confirm',
       component: BusinessConfirm
+    },
+    {
+      path: '/confirm_photo',
+      meta: {
+        title: '业务确认'
+      },
+      name: 'business_confirm_photo',
+      component: BusinessConfirmPhoto
     },
     {
       path: '/confirm_show',

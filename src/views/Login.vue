@@ -1,27 +1,29 @@
 <template>
   <div class="login">
-    <Row :gutter="16">
-      <Col span="12">
+    <div>
+      <Row :gutter="16">
+        <Col span="12">
         <Button type="primary" class="login_button face">刷脸登录</Button>
-      </Col>
-      <Col span="12">
+        </Col>
+        <Col span="12">
         <Button type="primary" class="login_button">用户密码登录</Button>
-      </Col>
-    </Row>
-    <Form ref="formInline" :model="formInline" class="login_input">
-      <FormItem>
-        <Input type="text" v-model="formInline.username" placeholder="请输入用户名或手机号" class="login_input-user"></Input>
-      </FormItem>
-      <FormItem>
-        <Input type="password" v-model="formInline.password" placeholder="请输入密码" class="login_input-pass"></Input>
-      </FormItem>
-      <FormItem>
-        <Button type="primary" long @click="handleSubmit('formInline')">登录</Button>
-      </FormItem>
-    </Form>
-    <footer>
-      <img src="../assets/img/logo.png">主办单位：丰台工商
-    </footer>
+        </Col>
+      </Row>
+      <Form ref="formInline" :model="formInline" class="login_input">
+        <FormItem>
+          <Input type="text" v-model="formInline.username" placeholder="请输入用户名或手机号" class="login_input-user"></Input>
+        </FormItem>
+        <FormItem>
+          <Input type="password" v-model="formInline.password" placeholder="请输入密码" class="login_input-pass"></Input>
+        </FormItem>
+        <FormItem>
+          <Button type="primary" long @click="handleSubmit('formInline')">登录</Button>
+        </FormItem>
+      </Form>
+    </div>
+    <div class="login_bottom">
+      <MyFooter />
+    </div>
     <Modal v-model="modal3" :closable="false" class="login_modal" class-name="vertical-center-modal">
       <div class="login_modal-center">
         <img src="../assets/img/ren.png" width="80">
@@ -45,6 +47,7 @@
 <script>
   import MyCheckBox from '../components/MyCheckBox.vue'
   import axios from 'axios'
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -87,7 +90,8 @@
         }
     },
     components: {
-      MyCheckBox
+      MyCheckBox,
+      MyFooter
     }
   }
 
@@ -96,8 +100,14 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .login {
-    height: 100%;
-    padding: 0.54rem;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 2.25rem;
+    >div {
+      &:first-child {
+        padding: 0.54rem;
+      }
+    }
     &_button {
       font-size: 0.57rem;
       display: block;
@@ -136,21 +146,10 @@
         font-size: 0.57rem;
       }
     }
-    footer {
-      text-align: center;
-      color: #929292;
-      font-size: 0.5rem;
-      height: 1.75rem;
-      line-height: 1.75rem;
+    &_bottom {
       position: absolute;
-      width: 100%;
-      left: 0;
       bottom: 0;
-      img {
-        width: 0.72rem;
-        margin-right: 0.18rem;
-        vertical-align: middle;
-      }
+      width: 100%;
     }
     &_modal {
       .ivu-modal {

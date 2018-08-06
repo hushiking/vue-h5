@@ -43,11 +43,15 @@
         </Panel>
       </Collapse>
     </div>
+    <div class="scope_bottom">
+      <MyFooter />
+    </div>
   </div>
 </template>
 
 <script>
   import MyHeader from '../components/MyHeader.vue'
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -90,7 +94,8 @@
       }
     },
     components: {
-      MyHeader
+      MyHeader,
+      MyFooter
     }
   }
 
@@ -98,7 +103,9 @@
 
 <style lang="scss">
   .scope {
-    font-size: 0.57rem;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 2.25rem;
     &_main {
       padding: 0.57rem;
       &-select {
@@ -182,6 +189,11 @@
         color: #00b3ff;
         cursor: pointer;
       }
+    }
+    &_bottom {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
     }
   }
 
