@@ -2,10 +2,10 @@
   <div class="login">
     <Row :gutter="16">
       <Col span="12">
-      <Button type="primary" class="login_button face">刷脸登录</Button>
+        <Button type="primary" class="login_button face">刷脸登录</Button>
       </Col>
       <Col span="12">
-      <Button type="primary" class="login_button">用户密码登录</Button>
+        <Button type="primary" class="login_button">用户密码登录</Button>
       </Col>
     </Row>
     <Form ref="formInline" :model="formInline" class="login_input">
@@ -44,6 +44,7 @@
 
 <script>
   import MyCheckBox from '../components/MyCheckBox.vue'
+  import axios from 'axios'
   export default {
     data() {
       return {
@@ -74,6 +75,20 @@
       } else {
         this.modal3 = true
       }
+    },
+    mounted: function () {
+        axios.post('/apis/system/user/setSession.do', {
+            session: {
+                username: '雷佳毅',
+                cerno: '36012419951013XXX'
+            }
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
     },
     components: {
       MyCheckBox
