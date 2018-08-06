@@ -70,25 +70,21 @@
       }
     },
     mounted() {
-      if (localStorage.getItem('tip')) {
-        this.modal3 = false
-      } else {
-        this.modal3 = true
-      }
-    },
-    mounted: function () {
         axios.post('/apis/system/user/setSession.do', {
             session: {
                 username: '雷佳毅',
                 cerno: '36012419951013XXX'
             }
+        }).then(function(response) {
+            console.log(response)
+        }).catch(function(error) {
+            console.log(error)
         })
-        .then(function (response) {
-            console.log(response);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+        if (localStorage.getItem('tip')) {
+            this.modal3 = false
+        } else {
+            this.modal3 = true
+        }
     },
     components: {
       MyCheckBox
