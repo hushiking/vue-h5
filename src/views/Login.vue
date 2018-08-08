@@ -70,21 +70,25 @@
       }
     },
     mounted() {
-        axios.post('/apis/system/user/setSession.do', {
-            session: {
-                username: '雷佳毅',
-                cerno: '36012419951013XXX'
+        axios({
+            method: 'post',
+            url: `/apis/system/user/setSession.do`,
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            data: `session=${JSON.stringify({username: '雷佳毅', cerno: '36012419951013XXXX'})}`
+            }).then((response) => {
+                if (response.data.result === 'sucess') {
+                    this.$router.push({
+                        name: 'proposed_establish'
+                    })
+                }
+            }).catch(function(error) {
+                    console.log(error)
+            })
+            if (localStorage.getItem('tip')) {
+                this.modal3 = false
+            } else {
+                this.modal3 = true
             }
-        }).then(function(response) {
-            console.log(response)
-        }).catch(function(error) {
-            console.log(error)
-        })
-        if (localStorage.getItem('tip')) {
-            this.modal3 = false
-        } else {
-            this.modal3 = true
-        }
     },
     components: {
       MyCheckBox

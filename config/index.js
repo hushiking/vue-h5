@@ -13,6 +13,7 @@ module.exports = {
     proxyTable: {
         '/apis': {    //将www.exaple.com印射为/apis
             target: 'http://jiayi.frpgz1.idcfengye.com',
+            // target: '127.0.0.1:3000',
             secure: false,  // 如果是https接口，需要配置这个参数
             changeOrigin: true,  //是否跨域
             pathRewrite: {

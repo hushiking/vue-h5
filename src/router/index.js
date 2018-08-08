@@ -72,7 +72,7 @@ export default new Router({
       component: ProposedNotself
     },
     {
-      path: '/menu',
+      path: '/menu/:companyid',
       meta: {
         title: '我的业务'
       },
