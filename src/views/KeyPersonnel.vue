@@ -29,13 +29,17 @@
         </RadioGroup>
       </FormItem>
     </Form>
-    <MyBottom :btnType="btnType" :btnText="btnText" />
+    <div class="personnel_bottom">
+      <MyBottom :btnType="btnType" :btnText="btnText" />
+      <MyFooter />
+    </div>
   </div>
 </template>
 
 <script>
   import MyHeader from '../components/MyHeader.vue'
   import MyBottom from '../components/MyBottom.vue'
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -55,7 +59,8 @@
     },
     components: {
       MyHeader,
-      MyBottom
+      MyBottom,
+      MyFooter
     }
   }
 
@@ -63,6 +68,9 @@
 
 <style lang="scss">
   .personnel {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 4rem;
     form {
       .ivu-row {
         padding: 0 0.54rem;
@@ -100,6 +108,12 @@
           font-size: 0.43rem;
           color: #aaa;
         }
+    }
+    &_bottom {
+      position: absolute;
+      width: 100%;
+      height: 3.5rem;
+      bottom: 0;
     }
   }
 

@@ -1,8 +1,8 @@
 <template>
-  <div class="confirm">
-    <div class="confirm_item">
-      <div class="confirm_item-title">{{item.title}}</div>
-      <div class="confirm_item-info">
+  <div class="photo">
+    <div class="photo_item">
+      <div class="photo_item-title">{{item.title}}</div>
+      <div class="photo_item-info">
         <span>
           业务类型：{{item.type}}
         </span>
@@ -10,43 +10,52 @@
           提交时间：{{item.time}}
         </span>
       </div>
-      <Input type="textarea" v-model="value" placeholder="请填写退回原因" :rows="8"></Input>
     </div>
-    <div class="confirm_retreat">
-      <Button type="primary">确定退回</Button>
+    <div class="photo_pic">
+      <img src="../assets/img/book.jpg" alt="">
     </div>
-    <div class="confirm_bottom">
+    <div class="photo_bottom">
+      <MyBottom :btn-type="btnType" :btn-text="btnText" />
       <MyFooter />
     </div>
   </div>
 </template>
 
 <script>
+  import MyBottom from '../components/MyBottom.vue'
   import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
-        value: '',
         item: {
           title: '北京顾信丰科贸易有限公司',
           time: '2017年7月8日',
           type: '普通设立'
+        },
+        btnType: {
+          type1: 'warning',
+          type2: 'primary'
+        },
+        btnText: {
+          text1: '退回经办人',
+          text2: '确认提交'
         }
       }
     },
     components: {
+      MyBottom,
       MyFooter
     }
   }
 
 </script>
 
-<style lang="scss">
-  .confirm {
+<style lang="scss" scoped>
+  .photo {
     position: relative;
     min-height: 100%;
     background: #f3f3f3;
-    padding-bottom: 2.25rem;
+    padding-bottom: 4rem;
     &_item {
       padding: 0.54rem;
       background: #fff;
@@ -67,21 +76,17 @@
         white-space: nowrap;
         padding: 0.36rem 0;
       }
-      .ivu-input-wrapper {
-        width: 100% !important;
-      }
     }
-    &_retreat {
-      padding: 0.72rem;
-      button {
-        display: block;
-        margin: 0 auto;
-        font-size: 0.57rem;
+    &_pic {
+      padding: 5%;
+      img {
+        width: 100%;
       }
     }
     &_bottom {
       position: absolute;
       width: 100%;
+      height: 3.5rem;
       bottom: 0;
     }
   }

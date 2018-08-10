@@ -43,13 +43,17 @@
         </FormItem>
       </Form>
     </div>
-    <MyBottom :btn-type="btnType" :btn-text="btnText" />
+    <div class="contact_bottom">
+      <MyBottom :btn-type="btnType" :btn-text="btnText" />
+      <MyFooter />
+    </div>
   </div>
 </template>
 
 <script>
   import MyHeader from '../components/MyHeader.vue'
   import MyBottom from '../components/MyBottom.vue'
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -76,7 +80,8 @@
     },
     components: {
       MyHeader,
-      MyBottom
+      MyBottom,
+      MyFooter
     }
   }
 
@@ -84,6 +89,9 @@
 
 <style lang="scss">
   .contact {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 4rem;
     >div {
       background: #fff;
       &:last-child {
@@ -157,6 +165,12 @@
           }
         }
       }
+    }
+    &_bottom {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 3.5rem;
     }
   }
 

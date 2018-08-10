@@ -54,6 +54,7 @@
     </div>
     <div class="completed_btn">
       <Button type="primary" @click="close">完成</Button>
+      <MyFooter />
     </div>
   </div>
 </template>
@@ -61,6 +62,7 @@
   import MyHeader from '../components/MyHeader.vue'
   import MyCheckBox from '../components/MyCheckBox.vue'
   import MySearch from '../components/MySearch.vue'
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -114,13 +116,17 @@
     components: {
       MyHeader,
       MyCheckBox,
-      MySearch
+      MySearch,
+      MyFooter
     }
   }
 
 </script>
 <style lang="scss">
   .completed {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 4rem;
     &_tip {
       padding: 0 0.54rem 0.36rem;
       >p {
@@ -148,6 +154,7 @@
           line-height: 1.25rem;
           input {
             left: -1rem;
+            height: 100%;
           }
         }
       }
@@ -186,10 +193,14 @@
       }
     }
     &_btn {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 3.5rem;
       button {
         display: block;
         margin: 0 auto;
-        padding: 0.22rem 1.75rem;
+        padding: 0.28rem 1.44rem;
         font-size: 0.57rem;
       }
     }

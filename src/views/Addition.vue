@@ -71,7 +71,10 @@
         <i-Switch v-model="formItem.switch9"></i-Switch>
       </FormItem>
     </Form>
-    <MyBottom :btn-type="btnType" :btn-text="btnText" />
+    <div class="addition_bottom">
+      <MyBottom :btn-type="btnType" :btn-text="btnText" />
+      <MyFooter />
+    </div>
   </div>
 </template>
 
@@ -79,6 +82,7 @@
   import MyHeader from '../components/MyHeader'
   import MyCheckBox from '../components/MyCheckBox'
   import MyBottom from '../components/MyBottom.vue'
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -148,7 +152,8 @@
     components: {
       MyHeader,
       MyCheckBox,
-      MyBottom
+      MyBottom,
+      MyFooter
     }
   }
 
@@ -156,8 +161,10 @@
 
 <style lang="scss">
   .addition {
-    height: 100%;
+    position: relative;
+    min-height: 100%;
     background: #f3f3f3;
+    padding-bottom: 4rem;
     form {
       background: #fff;
     }
@@ -222,6 +229,9 @@
           outline: none;
           opacity: 1;
           -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: transparent;
           &:before {
             color: #aaa;
             content: "\F401";
@@ -244,6 +254,7 @@
         padding-left: 1.1rem;
         input {
           transform: translateX(-130%);
+          height: 100%;
         }
       }
     }
@@ -295,6 +306,11 @@
     }
     &_line {
       border-bottom: 0 !important;
+    }
+    &_bottom {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
     }
   }
 

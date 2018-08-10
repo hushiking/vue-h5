@@ -57,12 +57,14 @@
     </Form>
     <div class="keyinfo_bottom">
       <Button type="primary" @click="go">保存</Button>
+      <MyFooter />
     </div>
   </div>
 </template>
 
 <script>
   import MyHeader from '../components/MyHeader.vue'
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -93,7 +95,8 @@
       }
     },
     components: {
-      MyHeader
+      MyHeader,
+      MyFooter
     }
   }
 
@@ -101,7 +104,9 @@
 
 <style lang="scss">
   .keyinfo {
-    height: 100%;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 4rem;
     background: #f3f3f3;
     &_space {
       height: 0.54rem;
@@ -166,7 +171,11 @@
       }
     }
     &_bottom {
-      padding: 0.72rem;
+      // padding: 0.72rem;
+      position: absolute;
+      height: 3.5rem;
+      bottom: 0;
+      width: 100%;
       button {
         display: block;
         margin: 0 auto;

@@ -13,10 +13,14 @@
         </div>
       </li>
     </ul>
+    <div class="continue_bottom">
+      <MyFooter />
+    </div>
   </div>
 </template>
 
 <script>
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -38,6 +42,9 @@
           }
         ]
       }
+    },
+    components: {
+      MyFooter
     }
   }
 
@@ -46,7 +53,9 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
   .continue {
-    height: 100%;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 2.25rem;
     background: #f3f3f3;
     li {
       margin-bottom: 0.54rem;
@@ -79,6 +88,11 @@
         overflow: hidden;
         white-space: nowrap;
       }
+    }
+    &_bottom {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
     }
   }
 

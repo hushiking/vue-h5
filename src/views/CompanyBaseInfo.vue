@@ -49,6 +49,7 @@
     </Form>
     <div class="baseinfo_bottom">
       <MyBottom :btn-type="btnType" :btn-text="btnText" />
+      <MyFooter />
     </div>
   </div>
 </template>
@@ -56,6 +57,7 @@
 <script>
   import MyHeader from '../components/MyHeader.vue'
   import MyBottom from '../components/MyBottom.vue'
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -83,7 +85,8 @@
     },
     components: {
       MyHeader,
-      MyBottom
+      MyBottom,
+      MyFooter
     }
   }
 
@@ -91,7 +94,9 @@
 
 <style lang="scss">
   .baseinfo {
-    height: 100%;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 4rem;
     background: #f3f3f3;
     &_space {
       height: 0.54rem;
@@ -155,7 +160,10 @@
       }
     }
     &_bottom {
-      background: #f3f3f3;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 3.5rem;
     }
   }
 

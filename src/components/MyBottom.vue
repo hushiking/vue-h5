@@ -39,7 +39,7 @@
   .bottom {
     display: flex;
     justify-content: space-around;
-    padding: 0.54rem;
+    // padding: 0.54rem;
     button {
       width: 45%;
       padding-top: 0.36rem;

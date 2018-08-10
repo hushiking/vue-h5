@@ -29,6 +29,7 @@
     </div>
     <div class="upload_bottom">
       <MyBottom :btn-type="btnType" :btn-text="btnText" />
+      <MyFooter />
     </div>
   </div>
 </template>
@@ -38,6 +39,7 @@
   import MyBottom from '../components/MyBottom.vue'
   import MyIdCard from '../components/MyIdCard.vue'
   import MyFileUpload from '../components/MyFileUpload.vue'
+  import MyFooter from '../components/MyFooter.vue'
   export default {
     data() {
       return {
@@ -77,7 +79,8 @@
       MyHeader,
       MyBottom,
       MyIdCard,
-      MyFileUpload
+      MyFileUpload,
+      MyFooter
     }
   }
 
@@ -85,7 +88,9 @@
 
 <style lang="scss">
   .upload {
-    height: 100%;
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 4rem;
     background: #f3f3f3;
     .ivu-collapse {
       border: none;
@@ -133,7 +138,10 @@
       font-size: 0.5rem;
     }
     &_bottom {
-      background: #f3f3f3;
+      position: absolute;
+      width: 100%;
+      height: 3.5rem;
+      bottom: 0;
     }
   }
 
